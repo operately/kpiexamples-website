@@ -1,0 +1,106 @@
+---
+import KpiCard from "../components/KpiCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  categories,
+  getKpisForCategory,
+  getPopularKpisForCategory,
+  getSubcategoriesForCategory,
+  type Category,
+} from "../lib/catalog";
+import { roundedCount } from "../lib/format";
+import { getCategoryPageContent } from "../lib/pageContent";
+
+export function getStaticPaths() {
+  return categories.map((category) => ({
+    params: { category: category.slug },
+    props: { category },
+  }));
+}
+
+type Props = {
+  category: Category;
+};
+
+const { category } = Astro.props;
+const categoryKpis = getKpisForCategory(category.id);
+const totalCount = categoryKpis.length;
+const subcategories = getSubcategoriesForCategory(category.id);
+const popularKpis = getPopularKpisForCategory(category.id);
+const countLabel = totalCount > 0 ? roundedCount(totalCount) : "";
+const pageTitle = `${countLabel} ${category.name} KPI Examples`.trim();
+const description =
+  totalCount > 0
+    ? `Explore a comprehensive list of ${countLabel} ${category.name} KPIs to measure and improve your performance.`
+    : `${category.name} KPI examples are coming soon.`;
+const renderedContent = getCategoryPageContent(category.slug);
+---
+
+<BaseLayout title={pageTitle} fullTitle description={description}>
+  {
+    renderedContent ? (
+      <div class="rendered-page" set:html={renderedContent} />
+    ) : (
+      <>
+        <h1>{countLabel && `${countLabel} `}{category.name} KPI Examples</h1>
+
+        {category.summary && <p class="lead">{category.summary}</p>}
+
+        {totalCount === 0 && (
+          <section class="empty-state">
+            <h2>KPIs for this category are coming soon.</h2>
+            <p>
+              We are still collecting practical examples for {category.name}. Check the public Google Sheet if you want to
+              suggest one.
+            </p>
+            <p>
+              <a href="https://docs.google.com/spreadsheets/d/17rw8FVoOh9jKP6HGZARI5ba7EXTp-x3xBbWcOtoW0vs">
+                Suggest a KPI
+              </a>
+            </p>
+          </section>
+        )}
+
+        {subcategories.length > 0 && (
+          <nav class="kpi-grid" aria-label={`${category.name} subcategories`}>
+            {subcategories.map((subcategory) => (
+              <a class="pill-link" href={`/${category.slug}/s/${subcategory.slug}`}>
+                {subcategory.name}
+              </a>
+            ))}
+          </nav>
+        )}
+
+        <img class="hero-image" src={`/images/${category.slug}.jpg`} alt={`${category.name} illustration`} loading="lazy" />
+
+        {popularKpis.length > 0 && (
+          <>
+            <h2>Most Popular {category.name} KPIs</h2>
+            <div class="card-list">
+              {popularKpis.map((kpi) => <KpiCard kpi={kpi} category={category} />)}
+            </div>
+          </>
+        )}
+
+        {totalCount > 0 && <h2>Comprehensive List of {category.name} KPIs</h2>}
+        {totalCount === 0 ? null : subcategories.length > 0 ? (
+          subcategories.map((subcategory) => {
+            const items = categoryKpis.filter((kpi) => kpi.subcategoryId === subcategory.id);
+            return (
+              <section>
+                <h3>
+                  <a href={`/${category.slug}/s/${subcategory.slug}`}>{subcategory.name}</a>
+                </h3>
+                <div class="card-list">
+                  {items.map((kpi) => <KpiCard kpi={kpi} category={category} />)}
+                </div>
+              </section>
+            );
+          })
+        ) : (
+          <div class="card-list">{categoryKpis.map((kpi) => <KpiCard kpi={kpi} category={category} />)}</div>
+        )}
+      </>
+    )
+  }
+</BaseLayout>

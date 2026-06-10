@@ -1,0 +1,145 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { categories, kpis } from "../lib/catalog";
+
+const searchIndex = kpis.map((kpi) => {
+  const category = categories.find((candidate) => candidate.id === kpi.categoryId);
+
+  return {
+    name: kpi.name,
+    description: kpi.description,
+    example: kpi.example,
+    unit: kpi.unit,
+    href: category ? `/${category.slug}/${kpi.slug}` : "#",
+    categoryName: category?.name ?? "",
+    categoryHref: category ? `/${category.slug}` : "#",
+  };
+});
+---
+
+<BaseLayout title="Search" description="Search KPI Examples by name, description, and example.">
+  <h1 id="search-title">Search KPI Examples</h1>
+  <form class="search-page-form" action="/search" method="get">
+    <label for="query">Search term</label>
+    <div>
+      <input id="query" name="query" type="search" autofocus />
+      <button type="submit">Search</button>
+    </div>
+  </form>
+  <div id="search-results" class="card-list" aria-live="polite"></div>
+</BaseLayout>
+
+<script define:vars={{ searchIndex }}>
+  const params = new URLSearchParams(window.location.search);
+  const query = params.get("query")?.trim() ?? "";
+  const input = document.querySelector("#query");
+  const title = document.querySelector("#search-title");
+  const results = document.querySelector("#search-results");
+
+  input.value = query;
+
+  function firstSentence(value) {
+    const index = value.indexOf(".");
+    return index >= 0 ? value.slice(0, index + 1) : value;
+  }
+
+  function matches(item, normalizedQuery) {
+    const haystack = [item.name, item.description, item.example, item.categoryName].filter(Boolean).join(" ").toLowerCase();
+    return haystack.includes(normalizedQuery);
+  }
+
+  function render() {
+    if (!query) {
+      title.textContent = "Search KPI Examples";
+      results.innerHTML = "<p>Enter a term above to search the static KPI catalog.</p>";
+      return;
+    }
+
+    const normalizedQuery = query.toLowerCase();
+    const matchesForQuery = searchIndex.filter((item) => matches(item, normalizedQuery));
+    title.textContent = `${matchesForQuery.length} search results for '${query}'`;
+
+    if (matchesForQuery.length === 0) {
+      results.innerHTML = "<p>No KPI examples matched this search.</p>";
+      return;
+    }
+
+    results.replaceChildren(...matchesForQuery.map(renderResult));
+  }
+
+  function renderResult(item) {
+    const article = document.createElement("article");
+    article.className = "card";
+
+    const category = document.createElement("p");
+    category.className = "search-category";
+    const categoryLink = document.createElement("a");
+    categoryLink.href = item.categoryHref;
+    categoryLink.textContent = item.categoryName;
+    category.append(categoryLink);
+
+    const heading = document.createElement("h2");
+    heading.className = "search-result-title";
+    const link = document.createElement("a");
+    link.href = item.href;
+    link.textContent = item.name;
+    heading.append(link);
+
+    const description = document.createElement("p");
+    description.className = "text-muted";
+    description.textContent = firstSentence(item.description);
+
+    article.append(category, heading, description);
+    return article;
+  }
+
+  render();
+</script>
+
+<style>
+  .search-page-form {
+    margin-top: 1rem;
+  }
+
+  .search-page-form label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+
+  .search-page-form div {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .search-page-form input {
+    min-width: 0;
+    flex: 1;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 0.65rem 0.75rem;
+    font: inherit;
+  }
+
+  .search-page-form button {
+    border: 0;
+    border-radius: 8px;
+    background: #1d4ed8;
+    color: white;
+    padding: 0.65rem 1rem;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .search-category {
+    margin: 0 0 0.4rem;
+    font-size: 0.95rem;
+  }
+
+  .search-result-title {
+    margin: 0;
+    font-size: 1.45rem;
+  }
+</style>

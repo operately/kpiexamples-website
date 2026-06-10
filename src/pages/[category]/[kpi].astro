@@ -1,0 +1,106 @@
+---
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import {
+  categories,
+  getCategoryForKpi,
+  getKpisForSubcategory,
+  getSubcategoryForKpi,
+  kpis,
+  type Category,
+  type Kpi,
+  type Subcategory,
+} from "../../lib/catalog";
+import { firstSentence, paragraphs, unitLabel } from "../../lib/format";
+
+export function getStaticPaths() {
+  return kpis.map((kpi) => {
+    const category = getCategoryForKpi(kpi);
+    const subcategory = getSubcategoryForKpi(kpi);
+
+    return {
+      params: { category: category.slug, kpi: kpi.slug },
+      props: { category, subcategory, kpi },
+    };
+  });
+}
+
+type Props = {
+  category: Category;
+  subcategory: Subcategory;
+  kpi: Kpi;
+};
+
+const { category, subcategory, kpi } = Astro.props;
+const relatedKpis = getKpisForSubcategory(subcategory.id).filter((candidate) => candidate.id !== kpi.id).slice(0, 5);
+const description = firstSentence(kpi.description);
+---
+
+<BaseLayout title={`${kpi.name} - ${category.name} KPI Examples`} fullTitle description={description}>
+  <Breadcrumbs
+    crumbs={[
+      { label: category.name, href: `/${category.slug}` },
+      { label: subcategory.name, href: `/${category.slug}/s/${subcategory.slug}` },
+    ]}
+  />
+
+  <h1>{kpi.name}</h1>
+  <p class="text-muted">{unitLabel(kpi.unit)}</p>
+
+  <section>
+    {paragraphs(kpi.description).map((paragraph) => <p>{paragraph}</p>)}
+  </section>
+
+  {
+    kpi.formula && (
+      <section>
+        <h2>Formula</h2>
+        <p class="formula">{kpi.formula}</p>
+      </section>
+    )
+  }
+
+  {
+    kpi.example && (
+      <section>
+        <h2>Example</h2>
+        {paragraphs(kpi.example).map((paragraph) => <p>{paragraph}</p>)}
+      </section>
+    )
+  }
+
+  {
+    kpi.upvoteCount > 0 && (
+      <p class="meta-row">
+        <strong>{kpi.upvoteCount}</strong>
+        <span>community upvotes in the source app snapshot</span>
+      </p>
+    )
+  }
+
+  {
+    relatedKpis.length > 0 && (
+      <section>
+        <h2>Other {subcategory.name} KPIs</h2>
+        <ul>
+          {relatedKpis.map((relatedKpi) => (
+            <li>
+              <a href={`/${category.slug}/${relatedKpi.slug}`}>{relatedKpi.name}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+</BaseLayout>
+
+<style>
+  .formula {
+    overflow-wrap: anywhere;
+    border-radius: 8px;
+    background: #f3f4f6;
+    padding: 0.8rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    font-size: 0.95rem;
+  }
+</style>

@@ -1,0 +1,123 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { categories } from "../lib/catalog";
+import { titleize } from "../lib/format";
+---
+
+<BaseLayout
+  title="KPI Examples - Your Ultimate Guide to Key Performance Indicators"
+  fullTitle
+  description="Explore a comprehensive, open-source library of key performance indicators across business functions."
+  image="/images/homepage-card.jpg"
+>
+  <h1>KPI Examples: Your Ultimate Guide to Key Performance Indicators</h1>
+
+  <p>
+    If you manage a team, chances are you need to measure progress. Key Performance Indicators are quantifiable
+    metrics used to evaluate the success of an organization or of a particular activity.
+  </p>
+  <p>
+    <em>KPI Examples</em> is an extensive, <a href="/about">open-source</a> library of business metrics designed
+    to help teams choose practical measures for their work.
+  </p>
+
+  <h2>Explore Categories of KPI Examples</h2>
+  <p>Discover the right KPIs to measure your business goals based on your industry and interests:</p>
+
+  {
+    categories.length > 0 ? (
+      <div class="category-grid">
+        {categories.map((category) => {
+          const imageName = category.pending ? `${category.slug}-bw` : category.slug;
+
+          return (
+            <a class:list={["category-card", { "is-pending": category.pending }]} href={`/${category.slug}`}>
+              <div
+                class="category-image"
+                style={`background-image: url('/images/${imageName}.jpg'), url('/images/summary-card.jpg')`}
+              >
+                <span>{titleize(category.name)}</span>
+              </div>
+              {category.summary && <p>{category.summary}</p>}
+            </a>
+          );
+        })}
+      </div>
+    ) : (
+      <div class="empty-state">
+        <p>The static catalog has not been generated yet.</p>
+        <p>Load a database snapshot into Rails, then run the export script described in the Astro README.</p>
+      </div>
+    )
+  }
+
+  <p>
+    No matter your sector or industry, our goal with <em>KPI Examples</em> is to provide practical information
+    that helps teams optimize performance and align their work with business objectives.
+  </p>
+</BaseLayout>
+
+<style>
+  .category-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .category-card {
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: white;
+    padding: 1rem;
+    color: inherit;
+    text-decoration: none;
+    box-shadow: 0 1px 3px rgb(15 23 42 / 0.08);
+  }
+
+  .category-card:hover {
+    color: inherit;
+    box-shadow: 0 8px 24px rgb(15 23 42 / 0.12);
+  }
+
+  .category-card.is-pending {
+    background: #fbfbfb;
+  }
+
+  .category-card p {
+    color: var(--color-muted);
+    font-size: 1rem;
+  }
+
+  .category-image {
+    display: flex;
+    min-height: 10rem;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 8px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .category-image span {
+    border-radius: 8px;
+    background: rgb(0 0 0 / 0.65);
+    color: white;
+    padding: 0.25rem 0.5rem;
+    font-weight: 800;
+  }
+
+  .empty-state {
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: white;
+    padding: 1rem;
+  }
+
+  @media (min-width: 760px) {
+    .category-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+</style>

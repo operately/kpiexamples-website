@@ -1,0 +1,460 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+
+type Props = {
+  title?: string;
+  description?: string;
+  image?: string;
+  fullTitle?: boolean;
+};
+
+const {
+  title,
+  description = "A simple website to find the right KPIs for your work.",
+  image = "/images/summary-card.jpg",
+  fullTitle = false,
+} = Astro.props;
+
+const pageTitle = title ? (fullTitle ? title : `${title} - KPI Examples`) : "KPI Examples";
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? "https://kpiexamples.operately.com").toString();
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@operately" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <meta property="og:image" content={image} />
+  </head>
+  <body>
+    <Header />
+    <main class="page-shell">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --color-link: #1d4ed8;
+    --color-link-hover: #1e3a8a;
+    --color-text: #111827;
+    --color-muted: #4b5563;
+    --color-border: #e5e7eb;
+    --left-app-margin: 180px;
+    font-family:
+      Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    background: #f9fafb;
+    color: var(--color-text);
+  }
+
+  body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  a {
+    color: var(--color-link);
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: var(--color-link-hover);
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  h1,
+  h2,
+  h3,
+  p {
+    margin-block: 0;
+  }
+
+  h1 {
+    margin-top: 0.5rem;
+    font-size: 2.25rem;
+    line-height: 1.15;
+    font-weight: 800;
+  }
+
+  h2 {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    font-weight: 700;
+  }
+
+  h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+
+  p {
+    margin-top: 1rem;
+  }
+
+  ul,
+  ol {
+    margin-block: 0.75rem;
+  }
+
+  .page-shell {
+    width: min(100%, 76ch);
+    flex: 1;
+    margin-top: 2.5rem;
+    padding: 0 1rem 4rem;
+  }
+
+  .text-muted {
+    color: var(--color-muted);
+  }
+
+  .card-list {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .card {
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: white;
+    padding: 1.25rem;
+    box-shadow: 0 1px 3px rgb(15 23 42 / 0.08);
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 24px rgb(15 23 42 / 0.12);
+  }
+
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+    margin: 1rem 0 2rem;
+  }
+
+  .pill-link {
+    display: flex;
+    min-height: 4rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: white;
+    padding: 0.75rem;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    color: var(--color-muted);
+    font-size: 0.95rem;
+  }
+
+  .unit-mark {
+    display: inline-flex;
+    min-width: 1.7rem;
+    min-height: 1.7rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    background: #eef2ff;
+    color: #3730a3;
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-decoration: none;
+    vertical-align: middle;
+  }
+
+  .lead {
+    color: #374151;
+  }
+
+  .rendered-page {
+    color: #1f2937;
+  }
+
+  .rendered-page .grid {
+    display: grid;
+  }
+
+  .rendered-page .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rendered-page .gap-1 {
+    gap: 0.25rem;
+  }
+
+  .rendered-page .gap-4 {
+    gap: 1rem;
+  }
+
+  .rendered-page .flex {
+    display: flex;
+  }
+
+  .rendered-page .flex-row {
+    flex-direction: row;
+  }
+
+  .rendered-page .flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  .rendered-page .items-center {
+    align-items: center;
+  }
+
+  .rendered-page .justify-center {
+    justify-content: center;
+  }
+
+  .rendered-page .space-x-2 > * + * {
+    margin-left: 0.5rem;
+  }
+
+  .rendered-page .mt-2 {
+    margin-top: 0.5rem;
+  }
+
+  .rendered-page .mt-3 {
+    margin-top: 0.75rem;
+  }
+
+  .rendered-page .mt-4 {
+    margin-top: 1rem;
+  }
+
+  .rendered-page .mt-5 {
+    margin-top: 1.25rem;
+  }
+
+  .rendered-page .mt-8 {
+    margin-top: 2rem;
+  }
+
+  .rendered-page .mt-12 {
+    margin-top: 3rem;
+  }
+
+  .rendered-page .mb-1 {
+    margin-bottom: 0.25rem;
+  }
+
+  .rendered-page .mb-2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .rendered-page .mb-3 {
+    margin-bottom: 0.75rem;
+  }
+
+  .rendered-page .mb-4 {
+    margin-bottom: 1rem;
+  }
+
+  .rendered-page .mb-8 {
+    margin-bottom: 2rem;
+  }
+
+  .rendered-page .p-4 {
+    padding: 1rem;
+  }
+
+  .rendered-page .p-6 {
+    padding: 1.5rem;
+  }
+
+  .rendered-page .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .rendered-page .py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .rendered-page .pt-4 {
+    padding-top: 1rem;
+  }
+
+  .rendered-page .w-full {
+    width: 100%;
+  }
+
+  .rendered-page .h-auto {
+    height: auto;
+  }
+
+  .rendered-page .text-center {
+    text-align: center;
+  }
+
+  .rendered-page .text-sm {
+    font-size: 0.875rem;
+  }
+
+  .rendered-page .text-base {
+    font-size: 1rem;
+  }
+
+  .rendered-page .text-lg {
+    font-size: 1.125rem;
+  }
+
+  .rendered-page .text-xl {
+    font-size: 1.25rem;
+  }
+
+  .rendered-page .text-2xl {
+    font-size: 1.5rem;
+    line-height: 1.25;
+  }
+
+  .rendered-page .text-4xl {
+    font-size: 2.25rem;
+    line-height: 1.15;
+  }
+
+  .rendered-page .font-medium {
+    font-weight: 500;
+  }
+
+  .rendered-page .font-semibold {
+    font-weight: 600;
+  }
+
+  .rendered-page .font-bold {
+    font-weight: 700;
+  }
+
+  .rendered-page .font-mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    overflow-wrap: anywhere;
+  }
+
+  .rendered-page .italic {
+    font-style: italic;
+  }
+
+  .rendered-page .underline {
+    text-decoration: underline;
+  }
+
+  .rendered-page .list-disc {
+    list-style-type: disc;
+  }
+
+  .rendered-page .list-inside {
+    list-style-position: inside;
+  }
+
+  .rendered-page .rounded-lg {
+    border-radius: 8px;
+  }
+
+  .rendered-page .shadow-md {
+    box-shadow: 0 4px 12px rgb(15 23 42 / 0.12);
+  }
+
+  .rendered-page .bg-white {
+    background: white;
+  }
+
+  .rendered-page .text-gray-500 {
+    color: #6b7280;
+  }
+
+  .rendered-page .text-gray-600 {
+    color: #4b5563;
+  }
+
+  .rendered-page .text-gray-700 {
+    color: #374151;
+  }
+
+  .rendered-page .text-gray-800 {
+    color: #1f2937;
+  }
+
+  .rendered-page .text-operately-blue {
+    color: var(--color-link);
+  }
+
+  .rendered-page .text-operately-dark-blue {
+    color: var(--color-link-hover);
+  }
+
+  .rendered-page .transition-shadow,
+  .rendered-page .transition,
+  .rendered-page .duration-300,
+  .rendered-page .ease-in-out {
+    transition: box-shadow 0.2s ease;
+  }
+
+  .rendered-page .card,
+  .rendered-page .shadow-md {
+    border: 1px solid var(--color-border);
+  }
+
+  .hero-image {
+    width: 100%;
+    height: auto;
+    margin: 1rem 0;
+    border-radius: 8px;
+  }
+
+  @media (min-width: 900px) {
+    .page-shell {
+      margin-left: var(--left-app-margin);
+      padding-inline: 2rem;
+    }
+
+    .kpi-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .rendered-page .grid-cols-2 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+</style>

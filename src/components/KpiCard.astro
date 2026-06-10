@@ -1,0 +1,34 @@
+---
+import type { Category, Kpi } from "../lib/catalog";
+import { firstSentence, unitLabel, unitMark } from "../lib/format";
+
+type Props = {
+  kpi: Kpi;
+  category: Category;
+  showCategory?: boolean;
+};
+
+const { kpi, category, showCategory = false } = Astro.props;
+const href = `/${category.slug}/${kpi.slug}`;
+---
+
+<article class="card">
+  {showCategory && <p class="category-link"><a href={`/${category.slug}`}>{category.name}</a></p>}
+  <h2 class="kpi-title">
+    <a href={href}>{kpi.name}</a>
+    <span class="unit-mark" title={unitLabel(kpi.unit)} aria-label={unitLabel(kpi.unit)}>{unitMark(kpi.unit)}</span>
+  </h2>
+  <p class="text-muted">{firstSentence(kpi.description)}</p>
+</article>
+
+<style>
+  .kpi-title {
+    margin: 0;
+    font-size: 1.45rem;
+  }
+
+  .category-link {
+    margin: 0 0 0.4rem;
+    font-size: 0.95rem;
+  }
+</style>

@@ -1,0 +1,55 @@
+---
+import Breadcrumbs from "../../../components/Breadcrumbs.astro";
+import KpiCard from "../../../components/KpiCard.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import {
+  categories,
+  getKpisForSubcategory,
+  getSubcategoriesForCategory,
+  type Category,
+  type Subcategory,
+} from "../../../lib/catalog";
+import { roundedCount } from "../../../lib/format";
+import { getSubcategoryPageContent } from "../../../lib/pageContent";
+
+export function getStaticPaths() {
+  return categories.flatMap((category) =>
+    getSubcategoriesForCategory(category.id).map((subcategory) => ({
+      params: { category: category.slug, subcategory: subcategory.slug },
+      props: { category, subcategory },
+    })),
+  );
+}
+
+type Props = {
+  category: Category;
+  subcategory: Subcategory;
+};
+
+const { category, subcategory } = Astro.props;
+const subcategoryKpis = getKpisForSubcategory(subcategory.id);
+const countLabel = roundedCount(subcategoryKpis.length);
+const title = `${countLabel} ${subcategory.name} KPIs in ${category.name}`;
+const renderedContent = getSubcategoryPageContent(category.slug, subcategory.slug);
+---
+
+<BaseLayout
+  title={title}
+  description={`Dive deeper into ${category.name} KPIs by exploring ${countLabel} ${subcategory.name} examples.`}
+>
+  {
+    renderedContent ? (
+      <div class="rendered-page" set:html={renderedContent} />
+    ) : (
+      <>
+        <Breadcrumbs crumbs={[{ label: category.name, href: `/${category.slug}` }]} />
+
+        <h1>{countLabel} {subcategory.name} KPIs</h1>
+
+        <div class="card-list">
+          {subcategoryKpis.map((kpi) => <KpiCard kpi={kpi} category={category} />)}
+        </div>
+      </>
+    )
+  }
+</BaseLayout>

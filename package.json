@@ -1,0 +1,18 @@
+{
+  "name": "kpiexamples-static",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "import:sheet": "node scripts/import-google-sheet.mjs",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^6.4.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
+  }
+}
