@@ -1,6 +1,6 @@
 # KPI Examples Website
 
-This is the source for the static Astro version of KPI Examples. It is designed to be published as a standalone static site, for example on Cloudflare Pages.
+This is the source for the static Astro version of [KPI Examples](https://kpiexamples.operately.com). It is designed to be published as a standalone static site, for example on Cloudflare Pages.
 
 The public URL shape is:
 
