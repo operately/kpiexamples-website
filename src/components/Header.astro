@@ -22,7 +22,7 @@
         </svg>
         <span>KPI Examples</span>
       </a>
-      <form class="search-form" action="/search" method="get">
+      <form class="search-form" action="/search" method="get" data-header-search>
         <label class="sr-only" for="site-search">Search KPI examples</label>
         <svg
           aria-hidden="true"
@@ -38,7 +38,23 @@
           <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path>
           <path d="M21 21l-6 -6"></path>
         </svg>
-        <input id="site-search" name="query" type="search" placeholder="Search KPIs by name or description" />
+        <input
+          id="site-search"
+          name="query"
+          type="search"
+          placeholder="Search KPIs by name or description"
+          autocomplete="off"
+          aria-autocomplete="list"
+          aria-controls="site-search-suggestions"
+          aria-expanded="false"
+        />
+        <div
+          id="site-search-suggestions"
+          class="search-suggestions"
+          role="listbox"
+          aria-label="KPI search suggestions"
+          hidden
+        ></div>
       </form>
     </div>
     <nav class="nav-links" aria-label="Primary navigation">
@@ -47,6 +63,252 @@
     </nav>
   </div>
 </header>
+
+<script>
+  const searchForm = document.querySelector("[data-header-search]");
+  const searchInput = searchForm?.querySelector("#site-search");
+  const suggestions = searchForm?.querySelector("#site-search-suggestions");
+  let catalogPromise;
+  let searchItems = [];
+  let activeIndex = -1;
+
+  function loadCatalog() {
+    if (!catalogPromise) {
+      catalogPromise = fetch("/catalog.json")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`Catalog request failed with ${response.status}`);
+          }
+
+          return response.json();
+        })
+        .then((catalog) => {
+          const categories = new Map(catalog.categories.map((category) => [category.id, category]));
+          const subcategories = new Map(
+            catalog.subcategories.map((subcategory) => [subcategory.id, subcategory]),
+          );
+
+          searchItems = catalog.kpis.map((kpi) => {
+            const category = categories.get(kpi.categoryId);
+            const subcategory = subcategories.get(kpi.subcategoryId);
+            const categorySlug = category?.slug ?? "";
+            const subcategorySlug = subcategory?.slug ?? "";
+
+            return {
+              name: kpi.name,
+              description: kpi.description,
+              formula: kpi.formula,
+              example: kpi.example,
+              unit: kpi.unit,
+              href: categorySlug ? `/${categorySlug}/${kpi.slug}` : "/search",
+              categoryName: category?.name ?? "",
+              subcategoryName: subcategory?.name ?? "",
+              subcategoryHref:
+                categorySlug && subcategorySlug ? `/${categorySlug}/s/${subcategorySlug}` : "",
+            };
+          });
+
+          return searchItems;
+        })
+        .catch(() => {
+          searchItems = [];
+          return searchItems;
+        });
+    }
+
+    return catalogPromise;
+  }
+
+  function normalize(value) {
+    return value
+      .toLowerCase()
+      .normalize("NFKD")
+      .replace(/[\u0300-\u036f]/g, "");
+  }
+
+  function searchTerms(query) {
+    return normalize(query).split(/\s+/).filter(Boolean);
+  }
+
+  function itemHaystack(item) {
+    return normalize(
+      [
+        item.name,
+        item.description,
+        item.formula,
+        item.example,
+        item.unit,
+        item.categoryName,
+        item.subcategoryName,
+      ]
+        .filter(Boolean)
+        .join(" "),
+    );
+  }
+
+  function scoreItem(item, terms, normalizedQuery) {
+    const normalizedName = normalize(item.name);
+    const haystack = itemHaystack(item);
+
+    if (!terms.every((term) => haystack.includes(term))) {
+      return -1;
+    }
+
+    if (normalizedName === normalizedQuery) {
+      return 0;
+    }
+
+    if (normalizedName.startsWith(normalizedQuery)) {
+      return 1;
+    }
+
+    if (normalizedName.includes(normalizedQuery)) {
+      return 2;
+    }
+
+    return 3;
+  }
+
+  function matchesForQuery(query) {
+    const normalizedQuery = normalize(query);
+    const terms = searchTerms(query);
+
+    if (terms.length === 0) {
+      return [];
+    }
+
+    return searchItems
+      .map((item) => ({ item, score: scoreItem(item, terms, normalizedQuery) }))
+      .filter((result) => result.score >= 0)
+      .sort((left, right) => left.score - right.score || left.item.name.localeCompare(right.item.name))
+      .slice(0, 7)
+      .map((result) => result.item);
+  }
+
+  function hideSuggestions() {
+    if (!suggestions || !searchInput) {
+      return;
+    }
+
+    activeIndex = -1;
+    suggestions.hidden = true;
+    suggestions.replaceChildren();
+    searchInput.setAttribute("aria-expanded", "false");
+    searchInput.removeAttribute("aria-activedescendant");
+  }
+
+  function setActiveSuggestion(index) {
+    if (!suggestions || !searchInput) {
+      return;
+    }
+
+    const options = [...suggestions.querySelectorAll("[role='option']")];
+    activeIndex = index;
+
+    options.forEach((option, optionIndex) => {
+      const isActive = optionIndex === activeIndex;
+      option.setAttribute("aria-selected", String(isActive));
+
+      if (isActive) {
+        searchInput.setAttribute("aria-activedescendant", option.id);
+        option.scrollIntoView({ block: "nearest" });
+      }
+    });
+
+    if (activeIndex < 0) {
+      searchInput.removeAttribute("aria-activedescendant");
+    }
+  }
+
+  function renderSuggestions(items, query) {
+    if (!suggestions || !searchInput) {
+      return;
+    }
+
+    suggestions.replaceChildren();
+    activeIndex = -1;
+
+    if (query.length < 2 || items.length === 0) {
+      hideSuggestions();
+      return;
+    }
+
+    items.forEach((item, index) => {
+      const option = document.createElement("a");
+      option.id = `site-search-suggestion-${index}`;
+      option.className = "search-suggestion";
+      option.href = item.href;
+      option.role = "option";
+      option.setAttribute("aria-selected", "false");
+
+      const name = document.createElement("span");
+      name.className = "search-suggestion-name";
+      name.textContent = item.name;
+
+      const meta = document.createElement("span");
+      meta.className = "search-suggestion-meta";
+      meta.textContent = [item.categoryName, item.subcategoryName].filter(Boolean).join(" / ");
+
+      option.append(name, meta);
+      suggestions.append(option);
+    });
+
+    suggestions.hidden = false;
+    searchInput.setAttribute("aria-expanded", "true");
+  }
+
+  async function updateSuggestions() {
+    if (!searchInput) {
+      return;
+    }
+
+    const query = searchInput.value.trim();
+
+    if (query.length < 2) {
+      hideSuggestions();
+      return;
+    }
+
+    await loadCatalog();
+    renderSuggestions(matchesForQuery(query), query);
+  }
+
+  searchInput?.addEventListener("focus", updateSuggestions);
+  searchInput?.addEventListener("input", updateSuggestions);
+
+  searchInput?.addEventListener("keydown", (event) => {
+    if (!suggestions || suggestions.hidden) {
+      return;
+    }
+
+    const options = [...suggestions.querySelectorAll("[role='option']")];
+
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+      setActiveSuggestion((activeIndex + 1) % options.length);
+    }
+
+    if (event.key === "ArrowUp") {
+      event.preventDefault();
+      setActiveSuggestion((activeIndex - 1 + options.length) % options.length);
+    }
+
+    if (event.key === "Enter" && activeIndex >= 0) {
+      event.preventDefault();
+      window.location.href = options[activeIndex].href;
+    }
+
+    if (event.key === "Escape") {
+      hideSuggestions();
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!searchForm?.contains(event.target)) {
+      hideSuggestions();
+    }
+  });
+</script>
 
 <style>
   .site-header {
@@ -118,6 +380,54 @@
     outline-offset: 0;
   }
 
+  :global(.search-suggestions) {
+    position: absolute;
+    z-index: 20;
+    top: calc(100% + 0.4rem);
+    left: 0;
+    width: min(52vw, 30rem);
+    max-height: min(26rem, calc(100vh - 7rem));
+    overflow-y: auto;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 16px 40px rgb(15 23 42 / 0.18);
+    padding: 0.35rem;
+  }
+
+  :global(.search-suggestion) {
+    display: grid;
+    gap: 0.1rem;
+    border-radius: 6px;
+    padding: 0.65rem 0.75rem;
+    color: #111827;
+    text-decoration: none;
+  }
+
+  :global(.search-suggestion:hover),
+  :global(.search-suggestion[aria-selected="true"]) {
+    background: #eff6ff;
+    color: #111827;
+  }
+
+  :global(.search-suggestion-name) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.98rem;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  :global(.search-suggestion-meta) {
+    overflow: hidden;
+    color: #6b7280;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.82rem;
+    line-height: 1.25;
+  }
+
   .search-icon {
     position: absolute;
     top: 50%;
@@ -170,6 +480,10 @@
     }
 
     .search-form input {
+      width: min(46vw, 24rem);
+    }
+
+    :global(.search-suggestions) {
       width: min(46vw, 24rem);
     }
   }
