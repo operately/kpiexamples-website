@@ -1,6 +1,8 @@
-# KPI Examples Static Astro Site
+# KPI Examples Website
 
-This is the static Astro port of the Rails app. It preserves the public URL shape:
+This is the source for the static Astro version of KPI Examples. It is designed to be published as a standalone static site, for example on Cloudflare Pages.
+
+The public URL shape is:
 
 - `/`
 - `/about`
@@ -14,32 +16,28 @@ This is the static Astro port of the Rails app. It preserves the public URL shap
 
 The app reads its catalog from `src/data/catalog.json`.
 
-## Import Data From the Public Sheet
+## Refresh Data From the Public Sheet
 
-The default import path uses the public Google Sheet for KPI content and the live sitemap for exact Render-era URL slugs:
+KPI content comes from the public Google Sheet. To import the current sheet data:
 
 ```bash
 npm run import:sheet
 ```
 
-The importer writes `src/data/catalog.json` with categories, subcategories, KPIs, formulas, examples, and any live-only sitemap records needed to match the current public app.
+The importer writes:
 
-## Export Data From Rails
+- `src/data/catalog.json`
+- `src/data/page-content.json`
 
-After restoring a Render database snapshot into the Rails app, run this from the repository root:
+It preserves existing KPI slugs and archived upvote counts from the current local `src/data/catalog.json` when it can match a KPI by category, subcategory, and name. New duplicate KPI names get deterministic unique slug suffixes.
 
-```bash
-bin/rails runner scripts/export_static_catalog.rb
-```
+After refreshing, run `npm run build` and commit the updated JSON files.
 
-That writes `astro/src/data/catalog.json` with categories, subcategories, KPIs, formulas, examples, and upvote counts.
-
-Comments, Google auth, admin screens, voting actions, and notification signup are intentionally not part of this static build. Upvote counts are preserved as read-only snapshot data when they come from the Rails export or live-only page scrape.
+Comments, Google auth, admin screens, voting actions, and notification signup are intentionally not part of this static website. Upvote counts are read-only archived values.
 
 ## Develop
 
 ```bash
-cd astro
 npm install
 npm run dev
 ```
@@ -47,6 +45,13 @@ npm run dev
 ## Build
 
 ```bash
-cd astro
 npm run build
 ```
+
+## Cloudflare Pages
+
+Use these build settings:
+
+- Build command: `npm run build`
+- Build output directory: `dist`
+- Node version: current LTS

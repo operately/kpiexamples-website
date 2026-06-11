@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-10T15:42:57.166Z",
+  "generatedAt": "2026-06-11T07:43:04.541Z",
   "categories": [
     {
       "id": 1,
@@ -630,12 +630,6 @@
       "categoryId": 15,
       "name": "UX",
       "slug": "ux"
-    },
-    {
-      "id": 87,
-      "categoryId": 8,
-      "name": "Demand Forecasting",
-      "slug": "demand-forecasting"
     }
   ],
   "kpis": [
@@ -1481,6 +1475,18 @@
     },
     {
       "id": 71,
+      "categoryId": 3,
+      "subcategoryId": 16,
+      "name": "Average Resolution Time",
+      "slug": "average-resolution-time-0eb7e128",
+      "unit": "time",
+      "description": "The average time taken to resolve a customer's issue from the moment it was raised. A shorter resolution time indicates efficient processes and can increase customer satisfaction.",
+      "formula": "Total time taken for resolutions / Total number of resolutions",
+      "example": "If 50 issues took a combined total of 100 hours to resolve, the average resolution time is 2 hours.",
+      "upvoteCount": 0
+    },
+    {
+      "id": 72,
       "categoryId": 7,
       "subcategoryId": 36,
       "name": "Average Response Time for Routine HR Inquiries",
@@ -1492,7 +1498,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 72,
+      "id": 73,
       "categoryId": 5,
       "subcategoryId": 21,
       "name": "Average Revenue Per Customer",
@@ -1504,7 +1510,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 73,
+      "id": 74,
       "categoryId": 13,
       "subcategoryId": 74,
       "name": "Average Sales Rep Onboarding Time",
@@ -1516,7 +1522,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 74,
+      "id": 75,
       "categoryId": 13,
       "subcategoryId": 74,
       "name": "Average Sales Training Costs per Employee",
@@ -1528,7 +1534,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 75,
+      "id": 76,
       "categoryId": 15,
       "subcategoryId": 83,
       "name": "Average Screens Per Visit",
@@ -1540,7 +1546,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 76,
+      "id": 77,
       "categoryId": 10,
       "subcategoryId": 59,
       "name": "Average Session Duration",
@@ -1552,7 +1558,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 77,
+      "id": 78,
       "categoryId": 7,
       "subcategoryId": 35,
       "name": "Average Sick Days Per Employee",
@@ -1564,7 +1570,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 78,
+      "id": 79,
       "categoryId": 7,
       "subcategoryId": 37,
       "name": "Average Sourcing Cost per Hire",
@@ -1576,7 +1582,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 79,
+      "id": 80,
       "categoryId": 7,
       "subcategoryId": 37,
       "name": "Average Time from Job Acceptance until Job Start",
@@ -1588,7 +1594,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 80,
+      "id": 81,
       "categoryId": 13,
       "subcategoryId": 72,
       "name": "Average Time on Market",
@@ -1600,7 +1606,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 81,
+      "id": 82,
       "categoryId": 10,
       "subcategoryId": 49,
       "name": "Average Time to Conversion",
@@ -1612,7 +1618,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 82,
+      "id": 83,
       "categoryId": 1,
       "subcategoryId": 3,
       "name": "Average Time to Do One Audit",
@@ -1624,7 +1630,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 83,
+      "id": 84,
       "categoryId": 7,
       "subcategoryId": 35,
       "name": "Average Vacation Days Per Employee",
@@ -1636,7 +1642,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 84,
+      "id": 85,
       "categoryId": 10,
       "subcategoryId": 58,
       "name": "Average View Duration",
@@ -1648,7 +1654,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 85,
+      "id": 86,
       "categoryId": 10,
       "subcategoryId": 47,
       "name": "Average Views per Post",
@@ -1660,7 +1666,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 86,
+      "id": 87,
       "categoryId": 3,
       "subcategoryId": 16,
       "name": "Average Wait Time Before Connecting To An Agent",
@@ -1672,7 +1678,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 87,
+      "id": 88,
       "categoryId": 10,
       "subcategoryId": 55,
       "name": "Backlinks",
@@ -1684,7 +1690,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 88,
+      "id": 89,
       "categoryId": 8,
       "subcategoryId": 43,
       "name": "Backorder Rate",
@@ -1696,7 +1702,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 89,
+      "id": 90,
       "categoryId": 5,
       "subcategoryId": 26,
       "name": "Bad Debt to Sales Ratio",
@@ -1708,7 +1714,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 90,
+      "id": 91,
       "categoryId": 11,
       "subcategoryId": 62,
       "name": "Batch Size",
@@ -1720,7 +1726,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 91,
+      "id": 92,
       "categoryId": 7,
       "subcategoryId": 30,
       "name": "Benefit Utilization Rate",
@@ -1732,7 +1738,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 92,
+      "id": 93,
       "categoryId": 5,
       "subcategoryId": 22,
       "name": "Benefits as a Percentage of Salary",
@@ -1744,7 +1750,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 93,
+      "id": 94,
       "categoryId": 13,
       "subcategoryId": 75,
       "name": "Bid Conversion Rate",
@@ -1756,7 +1762,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 94,
+      "id": 95,
       "categoryId": 13,
       "subcategoryId": 75,
       "name": "Bid Quality Score",
@@ -1768,7 +1774,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 95,
+      "id": 96,
       "categoryId": 13,
       "subcategoryId": 75,
       "name": "Bid Success Rate",
@@ -1780,7 +1786,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 96,
+      "id": 97,
       "categoryId": 13,
       "subcategoryId": 75,
       "name": "Bid-to-Win Ratio",
@@ -1792,7 +1798,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 97,
+      "id": 98,
       "categoryId": 10,
       "subcategoryId": 47,
       "name": "Blog Conversion Rate",
@@ -1804,7 +1810,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 98,
+      "id": 99,
       "categoryId": 10,
       "subcategoryId": 47,
       "name": "Blog Subscribers",
@@ -1816,7 +1822,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 99,
+      "id": 100,
       "categoryId": 10,
       "subcategoryId": 51,
       "name": "Bounce Rate",
@@ -1828,7 +1834,19 @@
       "upvoteCount": 0
     },
     {
-      "id": 100,
+      "id": 101,
+      "categoryId": 10,
+      "subcategoryId": 59,
+      "name": "Bounce Rate",
+      "slug": "bounce-rate-6f3f4bf9",
+      "unit": "percentage",
+      "description": "The percentage of visitors who navigate away from the site after viewing only one page. A high bounce rate might indicate that visitors aren't finding what they're looking for or that user experience is lacking.",
+      "formula": "(Single-page sessions / Total sessions) x 100",
+      "example": "If 500 out of 1,000 sessions were single-page visits, the bounce rate is 50%.",
+      "upvoteCount": 0
+    },
+    {
+      "id": 102,
       "categoryId": 10,
       "subcategoryId": 48,
       "name": "Brand Awareness",
@@ -1840,7 +1858,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 101,
+      "id": 103,
       "categoryId": 10,
       "subcategoryId": 48,
       "name": "Brand Consistency",
@@ -1852,7 +1870,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 102,
+      "id": 104,
       "categoryId": 10,
       "subcategoryId": 48,
       "name": "Brand Loyalty Rate",
@@ -1864,7 +1882,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 103,
+      "id": 105,
       "categoryId": 10,
       "subcategoryId": 52,
       "name": "Brand Mentions During Event",
@@ -1876,7 +1894,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 104,
+      "id": 106,
       "categoryId": 10,
       "subcategoryId": 48,
       "name": "Brand Recall",
@@ -1888,7 +1906,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 105,
+      "id": 107,
       "categoryId": 10,
       "subcategoryId": 48,
       "name": "Brand Reputation Score",
@@ -1900,7 +1918,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 106,
+      "id": 108,
       "categoryId": 13,
       "subcategoryId": 68,
       "name": "Break-even Analysis",
@@ -1912,7 +1930,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 107,
+      "id": 109,
       "categoryId": 5,
       "subcategoryId": 20,
       "name": "Budget Variance",
@@ -1924,7 +1942,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 108,
+      "id": 110,
       "categoryId": 14,
       "subcategoryId": 77,
       "name": "Bug Density",
@@ -1936,7 +1954,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 109,
+      "id": 111,
       "categoryId": 14,
       "subcategoryId": 77,
       "name": "Build Failure Rate",
@@ -1948,7 +1966,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 110,
+      "id": 112,
       "categoryId": 5,
       "subcategoryId": 24,
       "name": "Burn Rate",
@@ -1960,7 +1978,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 111,
+      "id": 113,
       "categoryId": 3,
       "subcategoryId": 14,
       "name": "Call Abandonment Rate",
@@ -1972,7 +1990,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 112,
+      "id": 114,
       "categoryId": 3,
       "subcategoryId": 14,
       "name": "Call Resolution Rate",
@@ -1984,7 +2002,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 113,
+      "id": 115,
       "categoryId": 3,
       "subcategoryId": 14,
       "name": "Call Service Level",
@@ -1996,7 +2014,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 114,
+      "id": 116,
       "categoryId": 3,
       "subcategoryId": 14,
       "name": "Call Transfer Rate",
@@ -2008,7 +2026,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 115,
+      "id": 117,
       "categoryId": 3,
       "subcategoryId": 14,
       "name": "Call Volume",
@@ -2020,7 +2038,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 116,
+      "id": 118,
       "categoryId": 14,
       "subcategoryId": 78,
       "name": "Capacity Utilization",
@@ -2032,7 +2050,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 117,
+      "id": 119,
       "categoryId": 8,
       "subcategoryId": 39,
       "name": "Carrying Costs, Finished Goods",
@@ -2044,7 +2062,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 118,
+      "id": 120,
       "categoryId": 14,
       "subcategoryId": 78,
       "name": "Change Failure Rate",
@@ -2056,7 +2074,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 119,
+      "id": 121,
       "categoryId": 14,
       "subcategoryId": 78,
       "name": "Change Success Rate",
@@ -2068,7 +2086,19 @@
       "upvoteCount": 0
     },
     {
-      "id": 120,
+      "id": 122,
+      "categoryId": 14,
+      "subcategoryId": 81,
+      "name": "Change Success Rate",
+      "slug": "change-success-rate-82e0e9b4",
+      "unit": "percentage",
+      "description": "Measures the percentage of changes applied to the system that are successful without causing incidents or degradations, indicating the effectiveness of change management.",
+      "formula": "(Successful Changes / Total Changes) * 100",
+      "example": "If out of 100 changes, 95 are successful, the success rate is (95/100)*100 = 95%.",
+      "upvoteCount": 0
+    },
+    {
+      "id": 123,
       "categoryId": 3,
       "subcategoryId": 15,
       "name": "Chat Abandonment Rate",
@@ -2080,7 +2110,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 121,
+      "id": 124,
       "categoryId": 3,
       "subcategoryId": 15,
       "name": "Chat Completion Rate",
@@ -2092,7 +2122,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 122,
+      "id": 125,
       "categoryId": 3,
       "subcategoryId": 15,
       "name": "Chat Engagement Rate",
@@ -2104,7 +2134,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 123,
+      "id": 126,
       "categoryId": 3,
       "subcategoryId": 15,
       "name": "Chat Resolution Time",
@@ -2116,7 +2146,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 124,
+      "id": 127,
       "categoryId": 3,
       "subcategoryId": 15,
       "name": "Chat Transfers",
@@ -2128,7 +2158,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 125,
+      "id": 128,
       "categoryId": 3,
       "subcategoryId": 15,
       "name": "Chat Volume",
@@ -2140,7 +2170,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 126,
+      "id": 129,
       "categoryId": 3,
       "subcategoryId": 15,
       "name": "Chatbot Resolution Rate",
@@ -2152,7 +2182,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 127,
+      "id": 130,
       "categoryId": 10,
       "subcategoryId": 46,
       "name": "Churn Rate of Affiliates",
@@ -2164,7 +2194,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 128,
+      "id": 131,
       "categoryId": 10,
       "subcategoryId": 50,
       "name": "Click-Through Rate",
@@ -2176,7 +2206,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 129,
+      "id": 132,
       "categoryId": 10,
       "subcategoryId": 51,
       "name": "Click-to-Open Rate",
@@ -2188,7 +2218,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 130,
+      "id": 133,
       "categoryId": 2,
       "subcategoryId": 9,
       "name": "Client Concentration Risk",
@@ -2200,7 +2230,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 131,
+      "id": 134,
       "categoryId": 2,
       "subcategoryId": 10,
       "name": "Client Referral Rate",
@@ -2212,7 +2242,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 132,
+      "id": 135,
       "categoryId": 2,
       "subcategoryId": 13,
       "name": "Client Retention Rate",
@@ -2224,7 +2254,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 133,
+      "id": 136,
       "categoryId": 13,
       "subcategoryId": 66,
       "name": "Client Retention Rate",
@@ -2236,7 +2266,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 134,
+      "id": 137,
       "categoryId": 2,
       "subcategoryId": 10,
       "name": "Client Satisfaction Score",
@@ -2248,7 +2278,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 135,
+      "id": 138,
       "categoryId": 14,
       "subcategoryId": 77,
       "name": "Code Complexity",
@@ -2260,7 +2290,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 136,
+      "id": 139,
       "categoryId": 14,
       "subcategoryId": 77,
       "name": "Code Coverage",
@@ -2272,7 +2302,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 137,
+      "id": 140,
       "categoryId": 14,
       "subcategoryId": 77,
       "name": "Code Duplication",
@@ -2284,7 +2314,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 138,
+      "id": 141,
       "categoryId": 14,
       "subcategoryId": 77,
       "name": "Code Smells",
@@ -2296,7 +2326,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 139,
+      "id": 142,
       "categoryId": 5,
       "subcategoryId": 26,
       "name": "Collections Effectiveness Index",
@@ -2308,7 +2338,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 140,
+      "id": 143,
       "categoryId": 3,
       "subcategoryId": 18,
       "name": "Complaint Resolution Satisfaction Rate",
@@ -2320,7 +2350,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 141,
+      "id": 144,
       "categoryId": 3,
       "subcategoryId": 18,
       "name": "Complaints Received",
@@ -2332,7 +2362,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 142,
+      "id": 145,
       "categoryId": 3,
       "subcategoryId": 14,
       "name": "Completion Call Rate",
@@ -2344,7 +2374,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 143,
+      "id": 146,
       "categoryId": 11,
       "subcategoryId": 61,
       "name": "Compliance Rate",
@@ -2356,7 +2386,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 144,
+      "id": 147,
       "categoryId": 3,
       "subcategoryId": 18,
       "name": "Compliments Received",
@@ -2368,7 +2398,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 145,
+      "id": 148,
       "categoryId": 3,
       "subcategoryId": 15,
       "name": "Concurrent Chats Per Agent",
@@ -2380,7 +2410,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 146,
+      "id": 149,
       "categoryId": 2,
       "subcategoryId": 11,
       "name": "Consultant Satisfaction Score",
@@ -2392,7 +2422,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 147,
+      "id": 150,
       "categoryId": 2,
       "subcategoryId": 11,
       "name": "Consultant Training Hours",
@@ -2404,7 +2434,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 148,
+      "id": 151,
       "categoryId": 2,
       "subcategoryId": 11,
       "name": "Consultant Turnover Rate",
@@ -2416,7 +2446,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 149,
+      "id": 152,
       "categoryId": 2,
       "subcategoryId": 13,
       "name": "Consultant Utilization Rate",
@@ -2428,7 +2458,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 150,
+      "id": 153,
       "categoryId": 13,
       "subcategoryId": 70,
       "name": "Content Usage by Sales",
@@ -2440,7 +2470,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 151,
+      "id": 154,
       "categoryId": 15,
       "subcategoryId": 84,
       "name": "Contributing External Companies",
@@ -2452,7 +2482,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 152,
+      "id": 155,
       "categoryId": 10,
       "subcategoryId": 49,
       "name": "Conversion Rate at Each Funnel Stage",
@@ -2464,7 +2494,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 153,
+      "id": 156,
       "categoryId": 15,
       "subcategoryId": 85,
       "name": "Conversion Rate from Free to Paid Users",
@@ -2476,7 +2506,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 154,
+      "id": 157,
       "categoryId": 10,
       "subcategoryId": 52,
       "name": "Conversion Rate Post-Event",
@@ -2488,7 +2518,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 155,
+      "id": 158,
       "categoryId": 10,
       "subcategoryId": 54,
       "name": "Conversions from PR Efforts",
@@ -2500,7 +2530,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 156,
+      "id": 159,
       "categoryId": 5,
       "subcategoryId": 25,
       "name": "Cost of Goods Sold (COGS)",
@@ -2512,7 +2542,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 157,
+      "id": 160,
       "categoryId": 14,
       "subcategoryId": 80,
       "name": "Cost of Incidents",
@@ -2524,7 +2554,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 158,
+      "id": 161,
       "categoryId": 7,
       "subcategoryId": 36,
       "name": "Cost of Office Space per Employee",
@@ -2536,7 +2566,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 159,
+      "id": 162,
       "categoryId": 10,
       "subcategoryId": 53,
       "name": "Cost of Transcripts",
@@ -2548,7 +2578,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 160,
+      "id": 163,
       "categoryId": 10,
       "subcategoryId": 49,
       "name": "Cost Per Acquisition at Each Funnel Stage",
@@ -2560,7 +2590,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 161,
+      "id": 164,
       "categoryId": 10,
       "subcategoryId": 52,
       "name": "Cost Per Attendee",
@@ -2572,7 +2602,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 162,
+      "id": 165,
       "categoryId": 13,
       "subcategoryId": 75,
       "name": "Cost per Bid",
@@ -2584,7 +2614,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 163,
+      "id": 166,
       "categoryId": 10,
       "subcategoryId": 50,
       "name": "Cost Per Click",
@@ -2596,7 +2626,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 164,
+      "id": 167,
       "categoryId": 10,
       "subcategoryId": 50,
       "name": "Cost Per Conversion",
@@ -2608,7 +2638,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 165,
+      "id": 168,
       "categoryId": 15,
       "subcategoryId": 83,
       "name": "Cost Per Install",
@@ -2620,7 +2650,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 166,
+      "id": 169,
       "categoryId": 10,
       "subcategoryId": 57,
       "name": "Cost Per Thousand (CPM)",
@@ -2632,7 +2662,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 167,
+      "id": 170,
       "categoryId": 11,
       "subcategoryId": 64,
       "name": "Cost Performance Index",
@@ -2644,7 +2674,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 168,
+      "id": 171,
       "categoryId": 11,
       "subcategoryId": 64,
       "name": "Cost Variance",
@@ -2656,7 +2686,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 169,
+      "id": 172,
       "categoryId": 11,
       "subcategoryId": 60,
       "name": "Cost-Benefit Ratio Estimate",
@@ -2668,7 +2698,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 170,
+      "id": 173,
       "categoryId": 14,
       "subcategoryId": 77,
       "name": "CPU Utilization",
@@ -2680,7 +2710,19 @@
       "upvoteCount": 0
     },
     {
-      "id": 171,
+      "id": 174,
+      "categoryId": 14,
+      "subcategoryId": 79,
+      "name": "CPU Utilization",
+      "slug": "cpu-utilization-82cb5364",
+      "unit": "percentage",
+      "description": "Measures the percentage of the CPU's capacity utilized by the application during execution, impacting performance and server load.",
+      "formula": "(CPU Time Used by the Application / Total CPU Time Available) * 100",
+      "example": "If an application uses 250 CPU seconds during a period when 1,000 CPU seconds were available, the CPU utilization is (250/1000)*100 = 25%.",
+      "upvoteCount": 0
+    },
+    {
+      "id": 175,
       "categoryId": 10,
       "subcategoryId": 54,
       "name": "Crisis Response Time",
@@ -2692,7 +2734,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 172,
+      "id": 176,
       "categoryId": 5,
       "subcategoryId": 24,
       "name": "Current Ratio",
@@ -2704,7 +2746,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 173,
+      "id": 177,
       "categoryId": 11,
       "subcategoryId": 61,
       "name": "Customer Acceptance Rate",
@@ -2716,7 +2758,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 174,
+      "id": 178,
       "categoryId": 5,
       "subcategoryId": 21,
       "name": "Customer Acquisition Cost",
@@ -2728,7 +2770,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 175,
+      "id": 179,
       "categoryId": 5,
       "subcategoryId": 21,
       "name": "Customer Acquisition Cost Payback Period",
@@ -2740,7 +2782,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 176,
+      "id": 180,
       "categoryId": 3,
       "subcategoryId": 18,
       "name": "Customer Callbacks",
@@ -2752,7 +2794,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 177,
+      "id": 181,
       "categoryId": 5,
       "subcategoryId": 27,
       "name": "Customer Churn Rate",
@@ -2764,7 +2806,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 178,
+      "id": 182,
       "categoryId": 5,
       "subcategoryId": 27,
       "name": "Customer Expansion Rate",
@@ -2776,7 +2818,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 179,
+      "id": 183,
       "categoryId": 14,
       "subcategoryId": 80,
       "name": "Customer Impact",
@@ -2788,7 +2830,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 180,
+      "id": 184,
       "categoryId": 10,
       "subcategoryId": 49,
       "name": "Customer Journey Length",
@@ -2800,7 +2842,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 181,
+      "id": 185,
       "categoryId": 5,
       "subcategoryId": 21,
       "name": "Customer Lifetime Value",
@@ -2812,7 +2854,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 182,
+      "id": 186,
       "categoryId": 5,
       "subcategoryId": 21,
       "name": "Customer Profitability Score",
@@ -2824,7 +2866,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 183,
+      "id": 187,
       "categoryId": 5,
       "subcategoryId": 27,
       "name": "Customer Retention Cost",
@@ -2836,7 +2878,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 184,
+      "id": 188,
       "categoryId": 3,
       "subcategoryId": 18,
       "name": "Customer Satisfaction Score (CSAT)",
@@ -2848,7 +2890,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 185,
+      "id": 189,
       "categoryId": 3,
       "subcategoryId": 18,
       "name": "Customer Support Agent Feedback",
@@ -2860,7 +2902,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 186,
+      "id": 190,
       "categoryId": 10,
       "subcategoryId": 49,
       "name": "Customer Touchpoints Before Conversion",
@@ -2872,7 +2914,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 187,
+      "id": 191,
       "categoryId": 3,
       "subcategoryId": 18,
       "name": "Customers With Service Level Agreements in Place",
@@ -2884,7 +2926,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 188,
+      "id": 192,
       "categoryId": 8,
       "subcategoryId": 41,
       "name": "Cycle Count Accuracy",
@@ -2896,7 +2938,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 189,
+      "id": 193,
       "categoryId": 11,
       "subcategoryId": 62,
       "name": "Cycle Time",
@@ -2908,7 +2950,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 190,
+      "id": 194,
       "categoryId": 15,
       "subcategoryId": 85,
       "name": "Daily Active Users (DAU)",
@@ -2920,7 +2962,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 191,
+      "id": 195,
       "categoryId": 8,
       "subcategoryId": 42,
       "name": "Damaged Stock Rate",
@@ -2932,7 +2974,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 192,
+      "id": 196,
       "categoryId": 1,
       "subcategoryId": 1,
       "name": "Data Breaches Involving Sensitive Data",
@@ -2944,7 +2986,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 193,
+      "id": 197,
       "categoryId": 14,
       "subcategoryId": 76,
       "name": "Data Completeness",
@@ -2956,7 +2998,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 194,
+      "id": 198,
       "categoryId": 14,
       "subcategoryId": 76,
       "name": "Data Diversity Index",
@@ -2968,7 +3010,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 195,
+      "id": 199,
       "categoryId": 14,
       "subcategoryId": 76,
       "name": "Data Pipeline Processing Time",
@@ -2980,7 +3022,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 196,
+      "id": 200,
       "categoryId": 14,
       "subcategoryId": 76,
       "name": "Data Throughput",
@@ -2992,7 +3034,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 197,
+      "id": 201,
       "categoryId": 7,
       "subcategoryId": 37,
       "name": "Days From Employment Request to Job Opening",
@@ -3004,7 +3046,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 198,
+      "id": 202,
       "categoryId": 5,
       "subcategoryId": 26,
       "name": "Days Payable Outstanding",
@@ -3016,7 +3058,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 199,
+      "id": 203,
       "categoryId": 5,
       "subcategoryId": 26,
       "name": "Days Sales Outstanding",
@@ -3028,7 +3070,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 200,
+      "id": 204,
       "categoryId": 13,
       "subcategoryId": 71,
       "name": "Deal Slippage Rate",
@@ -3040,7 +3082,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 201,
+      "id": 205,
       "categoryId": 13,
       "subcategoryId": 71,
       "name": "Deal Win/Loss Ratio",
@@ -3052,7 +3094,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 202,
+      "id": 206,
       "categoryId": 5,
       "subcategoryId": 28,
       "name": "Debt Service Coverage Ratio",
@@ -3064,7 +3106,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 203,
+      "id": 207,
       "categoryId": 5,
       "subcategoryId": 24,
       "name": "Debt-to-Equity Ratio",
@@ -3076,7 +3118,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 204,
+      "id": 208,
       "categoryId": 14,
       "subcategoryId": 77,
       "name": "Defect Escape Rate",
@@ -3088,7 +3130,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 205,
+      "id": 209,
       "categoryId": 5,
       "subcategoryId": 23,
       "name": "Deferred Revenue",
@@ -3100,7 +3142,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 206,
+      "id": 210,
       "categoryId": 13,
       "subcategoryId": 68,
       "name": "Demand Forecasting",
@@ -3112,7 +3154,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 207,
+      "id": 211,
       "categoryId": 13,
       "subcategoryId": 67,
       "name": "Demo or Presentation Rate",
@@ -3124,7 +3166,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 208,
+      "id": 212,
       "categoryId": 14,
       "subcategoryId": 78,
       "name": "Deployment Frequency",
@@ -3136,7 +3178,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 209,
+      "id": 213,
       "categoryId": 15,
       "subcategoryId": 83,
       "name": "Device Usage",
@@ -3148,7 +3190,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 210,
+      "id": 214,
       "categoryId": 15,
       "subcategoryId": 86,
       "name": "Devices and Operating Systems",
@@ -3160,7 +3202,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 211,
+      "id": 215,
       "categoryId": 5,
       "subcategoryId": 28,
       "name": "Dividend Payout Ratio",
@@ -3172,7 +3214,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 212,
+      "id": 216,
       "categoryId": 14,
       "subcategoryId": 77,
       "name": "Documentation Coverage",
@@ -3184,7 +3226,19 @@
       "upvoteCount": 0
     },
     {
-      "id": 213,
+      "id": 217,
+      "categoryId": 14,
+      "subcategoryId": 79,
+      "name": "Documentation Coverage",
+      "slug": "documentation-coverage-abc85447",
+      "unit": "percentage",
+      "description": "Assesses the extent to which the codebase is documented. Adequate documentation supports maintainability and facilitates onboarding new team members.",
+      "formula": "(Lines of Documentation / Total Lines of Code) * 100",
+      "example": "If there are 500 lines of documentation for 2,000 lines of code, the documentation coverage is (500/2000)*100 = 25%.",
+      "upvoteCount": 0
+    },
+    {
+      "id": 218,
       "categoryId": 10,
       "subcategoryId": 53,
       "name": "Downloads per Episode",
@@ -3196,7 +3250,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 214,
+      "id": 219,
       "categoryId": 10,
       "subcategoryId": 49,
       "name": "Drop-Off Rate",
@@ -3208,7 +3262,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 215,
+      "id": 220,
       "categoryId": 5,
       "subcategoryId": 23,
       "name": "Earnings Before Interest and Taxes (EBIT)",
@@ -3220,7 +3274,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 216,
+      "id": 221,
       "categoryId": 5,
       "subcategoryId": 27,
       "name": "Earnings Per Share",
@@ -3232,7 +3286,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 217,
+      "id": 222,
       "categoryId": 8,
       "subcategoryId": 40,
       "name": "Economic Order Quantity",
@@ -3244,7 +3298,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 218,
+      "id": 223,
       "categoryId": 5,
       "subcategoryId": 29,
       "name": "Effective Tax Rate",
@@ -3256,7 +3310,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 219,
+      "id": 224,
       "categoryId": 3,
       "subcategoryId": 17,
       "name": "Email Backlog",
@@ -3268,7 +3322,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 220,
+      "id": 225,
       "categoryId": 3,
       "subcategoryId": 17,
       "name": "Email Case Reopen Rate",
@@ -3280,7 +3334,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 221,
+      "id": 226,
       "categoryId": 10,
       "subcategoryId": 51,
       "name": "Email Click-Through Rate",
@@ -3292,7 +3346,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 222,
+      "id": 227,
       "categoryId": 10,
       "subcategoryId": 51,
       "name": "Email Conversion Rate",
@@ -3304,7 +3358,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 223,
+      "id": 228,
       "categoryId": 10,
       "subcategoryId": 51,
       "name": "Email Delivery Rate",
@@ -3316,7 +3370,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 224,
+      "id": 229,
       "categoryId": 10,
       "subcategoryId": 51,
       "name": "Email Open Rate",
@@ -3328,7 +3382,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 225,
+      "id": 230,
       "categoryId": 10,
       "subcategoryId": 51,
       "name": "Email Return on Investment",
@@ -3340,7 +3394,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 226,
+      "id": 231,
       "categoryId": 3,
       "subcategoryId": 17,
       "name": "Email Template Usage Rate",
@@ -3352,7 +3406,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 227,
+      "id": 232,
       "categoryId": 3,
       "subcategoryId": 17,
       "name": "Email Volume",
@@ -3364,7 +3418,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 228,
+      "id": 233,
       "categoryId": 3,
       "subcategoryId": 17,
       "name": "Emails Per Resolution",
@@ -3376,7 +3430,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 229,
+      "id": 234,
       "categoryId": 7,
       "subcategoryId": 33,
       "name": "Employee Feedback Action Rate",
@@ -3388,7 +3442,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 230,
+      "id": 235,
       "categoryId": 1,
       "subcategoryId": 6,
       "name": "Employee Feedback Score on Training Effectiveness",
@@ -3400,7 +3454,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 231,
+      "id": 236,
       "categoryId": 7,
       "subcategoryId": 32,
       "name": "Employee Issue Resolution Rate",
@@ -3412,7 +3466,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 232,
+      "id": 237,
       "categoryId": 7,
       "subcategoryId": 34,
       "name": "Employee Retention",
@@ -3424,7 +3478,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 233,
+      "id": 238,
       "categoryId": 14,
       "subcategoryId": 81,
       "name": "Employee Satisfaction in On-call Duties",
@@ -3436,7 +3490,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 234,
+      "id": 239,
       "categoryId": 7,
       "subcategoryId": 33,
       "name": "Employee Satisfaction Score",
@@ -3448,7 +3502,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 235,
+      "id": 240,
       "categoryId": 7,
       "subcategoryId": 34,
       "name": "Employee Tenure Average",
@@ -3460,7 +3514,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 236,
+      "id": 241,
       "categoryId": 7,
       "subcategoryId": 35,
       "name": "Employees Trained in First Aid",
@@ -3472,7 +3526,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 237,
+      "id": 242,
       "categoryId": 7,
       "subcategoryId": 31,
       "name": "Employees With Disability",
@@ -3484,7 +3538,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 238,
+      "id": 243,
       "categoryId": 10,
       "subcategoryId": 54,
       "name": "Engagement on PR Content",
@@ -3496,7 +3550,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 239,
+      "id": 244,
       "categoryId": 10,
       "subcategoryId": 56,
       "name": "Engagement Rate",
@@ -3508,7 +3562,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 240,
+      "id": 245,
       "categoryId": 5,
       "subcategoryId": 28,
       "name": "Equity Turnover",
@@ -3520,7 +3574,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 241,
+      "id": 246,
       "categoryId": 14,
       "subcategoryId": 81,
       "name": "Error Budget Burn Rate",
@@ -3532,7 +3586,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 242,
+      "id": 247,
       "categoryId": 11,
       "subcategoryId": 61,
       "name": "Error Rate",
@@ -3544,7 +3598,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 243,
+      "id": 248,
       "categoryId": 3,
       "subcategoryId": 16,
       "name": "Escalation Rate",
@@ -3556,7 +3610,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 244,
+      "id": 249,
       "categoryId": 14,
       "subcategoryId": 80,
       "name": "Escalation Rate",
@@ -3568,7 +3622,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 245,
+      "id": 250,
       "categoryId": 11,
       "subcategoryId": 63,
       "name": "Estimate At Completion",
@@ -3580,7 +3634,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 246,
+      "id": 251,
       "categoryId": 11,
       "subcategoryId": 63,
       "name": "Estimate To Complete",
@@ -3592,7 +3646,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 247,
+      "id": 252,
       "categoryId": 10,
       "subcategoryId": 52,
       "name": "Event Feedback Score",
@@ -3604,7 +3658,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 248,
+      "id": 253,
       "categoryId": 10,
       "subcategoryId": 52,
       "name": "Event Return on Investment",
@@ -3616,7 +3670,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 249,
+      "id": 254,
       "categoryId": 15,
       "subcategoryId": 84,
       "name": "External to Internal Contribution Ratio",
@@ -3628,7 +3682,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 250,
+      "id": 255,
       "categoryId": 14,
       "subcategoryId": 76,
       "name": "Feature Importance Score",
@@ -3640,7 +3694,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 251,
+      "id": 256,
       "categoryId": 8,
       "subcategoryId": 40,
       "name": "Fill Rate",
@@ -3652,7 +3706,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 252,
+      "id": 257,
       "categoryId": 3,
       "subcategoryId": 16,
       "name": "First Contact Resolution Rate",
@@ -3664,7 +3718,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 253,
+      "id": 258,
       "categoryId": 3,
       "subcategoryId": 16,
       "name": "First Response Time",
@@ -3676,7 +3730,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 254,
+      "id": 259,
       "categoryId": 14,
       "subcategoryId": 77,
       "name": "Flaky Tests",
@@ -3688,7 +3742,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 255,
+      "id": 260,
       "categoryId": 13,
       "subcategoryId": 67,
       "name": "Follow-Up Contact Rate",
@@ -3700,7 +3754,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 256,
+      "id": 261,
       "categoryId": 10,
       "subcategoryId": 56,
       "name": "Follower Growth Rate",
@@ -3712,7 +3766,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 257,
+      "id": 262,
       "categoryId": 10,
       "subcategoryId": 51,
       "name": "Forwarding or Social Sharing Rate",
@@ -3724,7 +3778,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 258,
+      "id": 263,
       "categoryId": 10,
       "subcategoryId": 47,
       "name": "Frequency of Blog Posts",
@@ -3736,7 +3790,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 259,
+      "id": 264,
       "categoryId": 8,
       "subcategoryId": 40,
       "name": "Frequency of Canceled Orders",
@@ -3748,7 +3802,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 260,
+      "id": 265,
       "categoryId": 1,
       "subcategoryId": 1,
       "name": "Frequency of Data Backups",
@@ -3760,7 +3814,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 261,
+      "id": 266,
       "categoryId": 1,
       "subcategoryId": 2,
       "name": "Frequency of Documentation Reviews vs Set Schedule",
@@ -3772,7 +3826,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 262,
+      "id": 267,
       "categoryId": 8,
       "subcategoryId": 40,
       "name": "Frequency of Emergency Orders",
@@ -3784,7 +3838,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 263,
+      "id": 268,
       "categoryId": 10,
       "subcategoryId": 53,
       "name": "Frequency of Episodes",
@@ -3796,7 +3850,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 264,
+      "id": 269,
       "categoryId": 5,
       "subcategoryId": 19,
       "name": "Frequency of Financial Reporting",
@@ -3808,7 +3862,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 265,
+      "id": 270,
       "categoryId": 10,
       "subcategoryId": 58,
       "name": "Frequency of videos",
@@ -3820,7 +3874,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 266,
+      "id": 271,
       "categoryId": 10,
       "subcategoryId": 49,
       "name": "Funnel Conversion Rate",
@@ -3832,7 +3886,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 267,
+      "id": 272,
       "categoryId": 1,
       "subcategoryId": 1,
       "name": "GDPR, CCPA, and other Data Requests Processed Within the Time Frame",
@@ -3844,7 +3898,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 268,
+      "id": 273,
       "categoryId": 7,
       "subcategoryId": 31,
       "name": "Gender Ratio",
@@ -3856,7 +3910,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 269,
+      "id": 274,
       "categoryId": 8,
       "subcategoryId": 39,
       "name": "Gross Margin Return on Inventory Investment",
@@ -3868,7 +3922,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 270,
+      "id": 275,
       "categoryId": 5,
       "subcategoryId": 23,
       "name": "Gross Profit Margin",
@@ -3880,7 +3934,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 271,
+      "id": 276,
       "categoryId": 13,
       "subcategoryId": 69,
       "name": "Herfindahl-Hirschman Index",
@@ -3892,7 +3946,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 272,
+      "id": 277,
       "categoryId": 7,
       "subcategoryId": 34,
       "name": "High-potential Employee Retention Rate",
@@ -3904,7 +3958,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 273,
+      "id": 278,
       "categoryId": 8,
       "subcategoryId": 39,
       "name": "Holding Cost per Unit",
@@ -3916,7 +3970,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 274,
+      "id": 279,
       "categoryId": 3,
       "subcategoryId": 16,
       "name": "Hours of 1 on 1 coaching time per agent",
@@ -3928,7 +3982,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 275,
+      "id": 280,
       "categoryId": 7,
       "subcategoryId": 36,
       "name": "HR Budget Utilization Rate",
@@ -3940,7 +3994,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 276,
+      "id": 281,
       "categoryId": 15,
       "subcategoryId": 83,
       "name": "In-App Purchase Rate",
@@ -3952,7 +4006,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 277,
+      "id": 282,
       "categoryId": 15,
       "subcategoryId": 83,
       "name": "In-App Purchase Revenue Growth",
@@ -3964,7 +4018,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 278,
+      "id": 283,
       "categoryId": 8,
       "subcategoryId": 43,
       "name": "Inactive Inventory as Percentage of Inventory Value",
@@ -3976,7 +4030,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 279,
+      "id": 284,
       "categoryId": 14,
       "subcategoryId": 80,
       "name": "Incident Count",
@@ -3988,7 +4042,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 280,
+      "id": 285,
       "categoryId": 14,
       "subcategoryId": 81,
       "name": "Incident Reoccurrence Rate",
@@ -4000,7 +4054,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 281,
+      "id": 286,
       "categoryId": 1,
       "subcategoryId": 5,
       "name": "Incidents Related to Third-Party Breaches",
@@ -4012,7 +4066,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 282,
+      "id": 287,
       "categoryId": 2,
       "subcategoryId": 9,
       "name": "Industry Diversification",
@@ -4024,7 +4078,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 283,
+      "id": 288,
       "categoryId": 14,
       "subcategoryId": 81,
       "name": "Infrastructure Cost Efficiency",
@@ -4036,7 +4090,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 284,
+      "id": 289,
       "categoryId": 5,
       "subcategoryId": 25,
       "name": "Infrastructure Costs",
@@ -4048,7 +4102,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 285,
+      "id": 290,
       "categoryId": 8,
       "subcategoryId": 39,
       "name": "Insurance Costs as Percentage of Inventory Costs",
@@ -4060,7 +4114,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 286,
+      "id": 291,
       "categoryId": 5,
       "subcategoryId": 19,
       "name": "Internal Control Effectiveness Rate",
@@ -4072,7 +4126,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 287,
+      "id": 292,
       "categoryId": 2,
       "subcategoryId": 12,
       "name": "Internal Project Rework Rate",
@@ -4084,7 +4138,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 288,
+      "id": 293,
       "categoryId": 3,
       "subcategoryId": 17,
       "name": "Internal Response Time",
@@ -4096,7 +4150,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 289,
+      "id": 294,
       "categoryId": 8,
       "subcategoryId": 41,
       "name": "Inventory Accuracy",
@@ -4108,7 +4162,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 290,
+      "id": 295,
       "categoryId": 8,
       "subcategoryId": 43,
       "name": "Inventory Days of Supply",
@@ -4120,7 +4174,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 291,
+      "id": 296,
       "categoryId": 8,
       "subcategoryId": 39,
       "name": "Inventory Holding Costs as Percentage of Gross Sales",
@@ -4132,7 +4186,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 292,
+      "id": 297,
       "categoryId": 8,
       "subcategoryId": 39,
       "name": "Inventory Holding Costs as Percentage of Inventory Value",
@@ -4144,7 +4198,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 293,
+      "id": 298,
       "categoryId": 8,
       "subcategoryId": 41,
       "name": "Inventory Location Accuracy",
@@ -4156,7 +4210,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 294,
+      "id": 299,
       "categoryId": 8,
       "subcategoryId": 41,
       "name": "Inventory Shrinkage as Percentage of Inventory Value",
@@ -4168,7 +4222,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 295,
+      "id": 300,
       "categoryId": 8,
       "subcategoryId": 45,
       "name": "Inventory System Downtime",
@@ -4180,7 +4234,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 296,
+      "id": 301,
       "categoryId": 8,
       "subcategoryId": 42,
       "name": "Inventory to Obsolete Goods Ratio",
@@ -4192,7 +4246,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 297,
+      "id": 302,
       "categoryId": 8,
       "subcategoryId": 43,
       "name": "Inventory Turnover",
@@ -4204,7 +4258,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 298,
+      "id": 303,
       "categoryId": 13,
       "subcategoryId": 72,
       "name": "Inventory Turnover Ratio",
@@ -4216,7 +4270,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 299,
+      "id": 304,
       "categoryId": 15,
       "subcategoryId": 85,
       "name": "Invite Conversion Rate",
@@ -4228,7 +4282,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 300,
+      "id": 305,
       "categoryId": 7,
       "subcategoryId": 34,
       "name": "Involuntary Termination Rate",
@@ -4240,7 +4294,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 301,
+      "id": 306,
       "categoryId": 11,
       "subcategoryId": 65,
       "name": "Issue Resolution Time",
@@ -4252,7 +4306,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 302,
+      "id": 307,
       "categoryId": 7,
       "subcategoryId": 34,
       "name": "Job Leaving Ratio per Department",
@@ -4264,7 +4318,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 303,
+      "id": 308,
       "categoryId": 7,
       "subcategoryId": 37,
       "name": "Job Offer Acceptance Rate",
@@ -4276,7 +4330,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 304,
+      "id": 309,
       "categoryId": 13,
       "subcategoryId": 70,
       "name": "Joint Sales and Marketing Activities",
@@ -4288,7 +4342,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 305,
+      "id": 310,
       "categoryId": 10,
       "subcategoryId": 55,
       "name": "Keyword Ranking",
@@ -4300,7 +4354,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 306,
+      "id": 311,
       "categoryId": 13,
       "subcategoryId": 74,
       "name": "Knowledge Retention Rate",
@@ -4312,7 +4366,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 307,
+      "id": 312,
       "categoryId": 2,
       "subcategoryId": 11,
       "name": "Knowledge Reuse Rate",
@@ -4324,7 +4378,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 308,
+      "id": 313,
       "categoryId": 14,
       "subcategoryId": 76,
       "name": "Label Accuracy",
@@ -4336,7 +4390,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 309,
+      "id": 314,
       "categoryId": 13,
       "subcategoryId": 68,
       "name": "Lead Conversion Forecast",
@@ -4348,7 +4402,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 310,
+      "id": 315,
       "categoryId": 13,
       "subcategoryId": 73,
       "name": "Lead Conversion Rate",
@@ -4360,7 +4414,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 311,
+      "id": 316,
       "categoryId": 13,
       "subcategoryId": 71,
       "name": "Lead Drop-off Rate",
@@ -4372,7 +4426,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 312,
+      "id": 317,
       "categoryId": 13,
       "subcategoryId": 70,
       "name": "Lead Handoff SLA Compliance",
@@ -4384,7 +4438,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 313,
+      "id": 318,
       "categoryId": 13,
       "subcategoryId": 67,
       "name": "Lead Response Time",
@@ -4396,7 +4450,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 314,
+      "id": 319,
       "categoryId": 10,
       "subcategoryId": 49,
       "name": "Lead Scoring Average",
@@ -4408,7 +4462,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 315,
+      "id": 320,
       "categoryId": 11,
       "subcategoryId": 62,
       "name": "Lead Time",
@@ -4420,7 +4474,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 316,
+      "id": 321,
       "categoryId": 14,
       "subcategoryId": 78,
       "name": "Lead Time",
@@ -4432,7 +4486,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 317,
+      "id": 322,
       "categoryId": 7,
       "subcategoryId": 34,
       "name": "Leadership Transition Success Rate",
@@ -4444,7 +4498,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 318,
+      "id": 323,
       "categoryId": 10,
       "subcategoryId": 52,
       "name": "Leads Generated At Event",
@@ -4456,7 +4510,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 319,
+      "id": 324,
       "categoryId": 10,
       "subcategoryId": 55,
       "name": "Leads Generated via Organic Search",
@@ -4468,7 +4522,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 320,
+      "id": 325,
       "categoryId": 7,
       "subcategoryId": 32,
       "name": "Learning Sessions Held for Top Management",
@@ -4480,7 +4534,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 321,
+      "id": 326,
       "categoryId": 5,
       "subcategoryId": 25,
       "name": "Legal Fees and Settlements",
@@ -4492,7 +4546,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 322,
+      "id": 327,
       "categoryId": 5,
       "subcategoryId": 25,
       "name": "License and Royalty Costs",
@@ -4504,7 +4558,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 323,
+      "id": 328,
       "categoryId": 13,
       "subcategoryId": 66,
       "name": "Lifetime Value of an Account",
@@ -4516,7 +4570,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 324,
+      "id": 329,
       "categoryId": 10,
       "subcategoryId": 49,
       "name": "Loyalty/Repeat Customer Rate",
@@ -4528,7 +4582,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 325,
+      "id": 330,
       "categoryId": 13,
       "subcategoryId": 68,
       "name": "Market Growth Rate Forecast",
@@ -4540,7 +4594,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 326,
+      "id": 331,
       "categoryId": 13,
       "subcategoryId": 69,
       "name": "Market Share Percentage",
@@ -4552,7 +4606,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 327,
+      "id": 332,
       "categoryId": 5,
       "subcategoryId": 25,
       "name": "Marketing and Advertising Expenditure",
@@ -4564,7 +4618,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 328,
+      "id": 333,
       "categoryId": 13,
       "subcategoryId": 70,
       "name": "Marketing Contribution to Closed Deals",
@@ -4576,7 +4630,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 329,
+      "id": 334,
       "categoryId": 13,
       "subcategoryId": 70,
       "name": "Marketing Influence on Sales Pipeline",
@@ -4588,7 +4642,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 330,
+      "id": 335,
       "categoryId": 13,
       "subcategoryId": 70,
       "name": "Marketing Qualified Leads (MQLs) to Sales Accepted Leads (SALs)",
@@ -4600,7 +4654,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 331,
+      "id": 336,
       "categoryId": 10,
       "subcategoryId": 53,
       "name": "Marketing Time per Episode",
@@ -4612,7 +4666,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 332,
+      "id": 337,
       "categoryId": 14,
       "subcategoryId": 80,
       "name": "Mean Time to Acknowledge",
@@ -4624,7 +4678,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 333,
+      "id": 338,
       "categoryId": 14,
       "subcategoryId": 80,
       "name": "Mean Time to Detect",
@@ -4636,7 +4690,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 334,
+      "id": 339,
       "categoryId": 1,
       "subcategoryId": 4,
       "name": "Mean Time to Detect Incidents",
@@ -4648,7 +4702,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 335,
+      "id": 340,
       "categoryId": 14,
       "subcategoryId": 78,
       "name": "Mean Time to Recover",
@@ -4660,7 +4714,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 336,
+      "id": 341,
       "categoryId": 1,
       "subcategoryId": 4,
       "name": "Mean Time to Respond to Incidents",
@@ -4672,7 +4726,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 337,
+      "id": 342,
       "categoryId": 10,
       "subcategoryId": 54,
       "name": "Media Mentions",
@@ -4684,7 +4738,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 338,
+      "id": 343,
       "categoryId": 7,
       "subcategoryId": 35,
       "name": "Medical Leave Frequency",
@@ -4696,7 +4750,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 339,
+      "id": 344,
       "categoryId": 15,
       "subcategoryId": 84,
       "name": "Meetups Organized",
@@ -4708,7 +4762,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 340,
+      "id": 345,
       "categoryId": 14,
       "subcategoryId": 77,
       "name": "Memory Usage",
@@ -4720,7 +4774,19 @@
       "upvoteCount": 0
     },
     {
-      "id": 341,
+      "id": 346,
+      "categoryId": 14,
+      "subcategoryId": 79,
+      "name": "Memory Usage",
+      "slug": "memory-usage-7e8d460f",
+      "unit": "number",
+      "description": "Indicates the amount of memory used by the application during execution. Efficient memory usage is key to performance and scalability.",
+      "formula": "Average Memory Used During Execution",
+      "example": "If an application uses an average of 120MB of memory, the memory usage is 120MB.",
+      "upvoteCount": 0
+    },
+    {
+      "id": 347,
       "categoryId": 3,
       "subcategoryId": 15,
       "name": "Missed Chats",
@@ -4732,7 +4798,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 342,
+      "id": 348,
       "categoryId": 3,
       "subcategoryId": 17,
       "name": "Missed Emails",
@@ -4744,7 +4810,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 343,
+      "id": 349,
       "categoryId": 15,
       "subcategoryId": 83,
       "name": "Mobile Retention Rate",
@@ -4756,7 +4822,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 344,
+      "id": 350,
       "categoryId": 10,
       "subcategoryId": 59,
       "name": "Mobile Traffic",
@@ -4768,7 +4834,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 345,
+      "id": 351,
       "categoryId": 14,
       "subcategoryId": 76,
       "name": "Model Accuracy Rate",
@@ -4780,7 +4846,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 346,
+      "id": 352,
       "categoryId": 14,
       "subcategoryId": 76,
       "name": "Model F1 Score",
@@ -4792,7 +4858,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 347,
+      "id": 353,
       "categoryId": 14,
       "subcategoryId": 76,
       "name": "Model Failure Rate",
@@ -4804,7 +4870,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 348,
+      "id": 354,
       "categoryId": 14,
       "subcategoryId": 76,
       "name": "Model Interpretability Index",
@@ -4816,7 +4882,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 349,
+      "id": 355,
       "categoryId": 14,
       "subcategoryId": 76,
       "name": "Model Precision",
@@ -4828,7 +4894,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 350,
+      "id": 356,
       "categoryId": 14,
       "subcategoryId": 76,
       "name": "Model Recall",
@@ -4840,7 +4906,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 351,
+      "id": 357,
       "categoryId": 14,
       "subcategoryId": 76,
       "name": "Model Robustness Score",
@@ -4852,7 +4918,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 352,
+      "id": 358,
       "categoryId": 14,
       "subcategoryId": 76,
       "name": "Model Scalability Rate",
@@ -4864,7 +4930,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 353,
+      "id": 359,
       "categoryId": 14,
       "subcategoryId": 76,
       "name": "Model Update Frequency",
@@ -4876,7 +4942,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 354,
+      "id": 360,
       "categoryId": 15,
       "subcategoryId": 85,
       "name": "Monthly Active Users (MAU)",
@@ -4888,7 +4954,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 355,
+      "id": 361,
       "categoryId": 15,
       "subcategoryId": 86,
       "name": "Navigation vs Search",
@@ -4900,7 +4966,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 356,
+      "id": 362,
       "categoryId": 11,
       "subcategoryId": 60,
       "name": "Net Present Value",
@@ -4912,7 +4978,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 357,
+      "id": 363,
       "categoryId": 5,
       "subcategoryId": 23,
       "name": "Net Profit",
@@ -4924,7 +4990,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 358,
+      "id": 364,
       "categoryId": 2,
       "subcategoryId": 7,
       "name": "Net Profit Per Project:",
@@ -4936,7 +5002,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 359,
+      "id": 365,
       "categoryId": 15,
       "subcategoryId": 86,
       "name": "Net Promoter Score",
@@ -4948,7 +5014,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 360,
+      "id": 366,
       "categoryId": 10,
       "subcategoryId": 52,
       "name": "Net Promoter Score For the Event",
@@ -4960,7 +5026,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 361,
+      "id": 367,
       "categoryId": 5,
       "subcategoryId": 27,
       "name": "Net Revenue Growth Rate",
@@ -4972,7 +5038,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 362,
+      "id": 368,
       "categoryId": 10,
       "subcategoryId": 52,
       "name": "Networking Opportunities Created",
@@ -4984,7 +5050,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 363,
+      "id": 369,
       "categoryId": 2,
       "subcategoryId": 8,
       "name": "New Client Acquisition Rate",
@@ -4996,7 +5062,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 364,
+      "id": 370,
       "categoryId": 7,
       "subcategoryId": 37,
       "name": "New Hire Satisfaction Rate with Recruiting Process",
@@ -5008,7 +5074,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 365,
+      "id": 371,
       "categoryId": 13,
       "subcategoryId": 69,
       "name": "New Market Growth Rate",
@@ -5020,7 +5086,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 366,
+      "id": 372,
       "categoryId": 10,
       "subcategoryId": 46,
       "name": "New Partnerships Acquired",
@@ -5032,7 +5098,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 367,
+      "id": 373,
       "categoryId": 1,
       "subcategoryId": 3,
       "name": "Non-compliance Findings in Internal Audits",
@@ -5044,7 +5110,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 368,
+      "id": 374,
       "categoryId": 1,
       "subcategoryId": 2,
       "name": "Non-Compliance Issues Detected Through Monitoring",
@@ -5056,7 +5122,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 369,
+      "id": 375,
       "categoryId": 7,
       "subcategoryId": 35,
       "name": "Number of Accidents",
@@ -5068,7 +5134,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 370,
+      "id": 376,
       "categoryId": 15,
       "subcategoryId": 82,
       "name": "Number of API Partners",
@@ -5080,7 +5146,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 371,
+      "id": 377,
       "categoryId": 13,
       "subcategoryId": 67,
       "name": "Number of Calls Made",
@@ -5092,7 +5158,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 372,
+      "id": 378,
       "categoryId": 15,
       "subcategoryId": 84,
       "name": "Number of Commits Per Contributor",
@@ -5104,7 +5170,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 373,
+      "id": 379,
       "categoryId": 15,
       "subcategoryId": 84,
       "name": "Number of Contributors",
@@ -5116,7 +5182,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 374,
+      "id": 380,
       "categoryId": 11,
       "subcategoryId": 61,
       "name": "Number of Defects Identified",
@@ -5128,7 +5194,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 375,
+      "id": 381,
       "categoryId": 11,
       "subcategoryId": 61,
       "name": "Number of Defects Resolved",
@@ -5140,7 +5206,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 376,
+      "id": 382,
       "categoryId": 10,
       "subcategoryId": 53,
       "name": "Number of Downloads Month over Month",
@@ -5152,7 +5218,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 377,
+      "id": 383,
       "categoryId": 5,
       "subcategoryId": 19,
       "name": "Number of Financial Discrepancies Detected",
@@ -5164,7 +5230,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 378,
+      "id": 384,
       "categoryId": 1,
       "subcategoryId": 4,
       "name": "Number of Identified Risks",
@@ -5176,7 +5242,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 379,
+      "id": 385,
       "categoryId": 1,
       "subcategoryId": 4,
       "name": "Number of Incidents Resolved vs Reported",
@@ -5188,7 +5254,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 380,
+      "id": 386,
       "categoryId": 2,
       "subcategoryId": 8,
       "name": "Number of New Services or Solutions Launched per Year",
@@ -5200,7 +5266,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 381,
+      "id": 387,
       "categoryId": 14,
       "subcategoryId": 77,
       "name": "Number of Pull Request Revisions",
@@ -5212,7 +5278,19 @@
       "upvoteCount": 0
     },
     {
-      "id": 382,
+      "id": 388,
+      "categoryId": 14,
+      "subcategoryId": 79,
+      "name": "Number of Pull Request Revisions",
+      "slug": "number-of-pull-request-revisions-df0b95ae",
+      "unit": "number",
+      "description": "Counts the number of revisions a pull request goes through before being merged, indicating the clarity of requirements and the effectiveness of initial submissions.",
+      "formula": "(Total Revisions for All PRs / Number of PRs)",
+      "example": "If 30 PRs have 90 revisions in total, the average number of revisions per PR is 90/30 = 3.",
+      "upvoteCount": 0
+    },
+    {
+      "id": 389,
       "categoryId": 1,
       "subcategoryId": 4,
       "name": "Number of Security Incidents Reported",
@@ -5224,7 +5302,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 383,
+      "id": 390,
       "categoryId": 10,
       "subcategoryId": 53,
       "name": "Number of Unique Downloads",
@@ -5236,7 +5314,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 384,
+      "id": 391,
       "categoryId": 2,
       "subcategoryId": 13,
       "name": "On-Time Delivery Rate",
@@ -5248,7 +5326,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 385,
+      "id": 392,
       "categoryId": 3,
       "subcategoryId": 16,
       "name": "On-Time Response Rate",
@@ -5260,7 +5338,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 386,
+      "id": 393,
       "categoryId": 7,
       "subcategoryId": 37,
       "name": "Onboarding Satisfaction Rate",
@@ -5272,7 +5350,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 387,
+      "id": 394,
       "categoryId": 15,
       "subcategoryId": 84,
       "name": "Open Issue Duration",
@@ -5284,7 +5362,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 388,
+      "id": 395,
       "categoryId": 15,
       "subcategoryId": 84,
       "name": "Open Pull Requests",
@@ -5296,7 +5374,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 389,
+      "id": 396,
       "categoryId": 15,
       "subcategoryId": 84,
       "name": "Open Source Project Adoption Rate",
@@ -5308,7 +5386,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 390,
+      "id": 397,
       "categoryId": 15,
       "subcategoryId": 84,
       "name": "Open Source Project Followers",
@@ -5320,7 +5398,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 391,
+      "id": 398,
       "categoryId": 15,
       "subcategoryId": 84,
       "name": "Open Source Projects Contributed To",
@@ -5332,7 +5410,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 392,
+      "id": 399,
       "categoryId": 15,
       "subcategoryId": 84,
       "name": "Open Source Projects Created",
@@ -5344,7 +5422,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 393,
+      "id": 400,
       "categoryId": 5,
       "subcategoryId": 23,
       "name": "Operating Cash Flow",
@@ -5356,7 +5434,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 394,
+      "id": 401,
       "categoryId": 5,
       "subcategoryId": 27,
       "name": "Operating Profit Margin",
@@ -5368,7 +5446,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 395,
+      "id": 402,
       "categoryId": 5,
       "subcategoryId": 26,
       "name": "Operational Cost Per Collection",
@@ -5380,7 +5458,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 396,
+      "id": 403,
       "categoryId": 13,
       "subcategoryId": 67,
       "name": "Opportunity Follow-Up Time",
@@ -5392,7 +5470,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 397,
+      "id": 404,
       "categoryId": 8,
       "subcategoryId": 40,
       "name": "Order Lead Time",
@@ -5404,7 +5482,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 398,
+      "id": 405,
       "categoryId": 10,
       "subcategoryId": 55,
       "name": "Organic Traffic",
@@ -5416,7 +5494,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 399,
+      "id": 406,
       "categoryId": 10,
       "subcategoryId": 47,
       "name": "Overall Blog Visits",
@@ -5428,7 +5506,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 400,
+      "id": 407,
       "categoryId": 5,
       "subcategoryId": 22,
       "name": "Overtime Pay as a Percentage of Total Pay",
@@ -5440,7 +5518,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 401,
+      "id": 408,
       "categoryId": 10,
       "subcategoryId": 59,
       "name": "Page Error Rate",
@@ -5452,7 +5530,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 402,
+      "id": 409,
       "categoryId": 10,
       "subcategoryId": 59,
       "name": "Page Load Time",
@@ -5464,7 +5542,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 403,
+      "id": 410,
       "categoryId": 10,
       "subcategoryId": 59,
       "name": "Page Views per Visit",
@@ -5476,7 +5554,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 404,
+      "id": 411,
       "categoryId": 7,
       "subcategoryId": 35,
       "name": "Participation in Voluntary Health Screening",
@@ -5488,7 +5566,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 405,
+      "id": 412,
       "categoryId": 11,
       "subcategoryId": 60,
       "name": "Payback Period",
@@ -5500,7 +5578,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 406,
+      "id": 413,
       "categoryId": 5,
       "subcategoryId": 22,
       "name": "Payroll to Revenue Ratio",
@@ -5512,7 +5590,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 407,
+      "id": 414,
       "categoryId": 3,
       "subcategoryId": 14,
       "name": "Peak Hour Call Traffic",
@@ -5524,7 +5602,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 408,
+      "id": 415,
       "categoryId": 8,
       "subcategoryId": 45,
       "name": "Percentage of Duplicate Stock Numbers",
@@ -5536,7 +5614,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 409,
+      "id": 416,
       "categoryId": 5,
       "subcategoryId": 26,
       "name": "Percentage of On-Time Payments",
@@ -5548,7 +5626,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 410,
+      "id": 417,
       "categoryId": 1,
       "subcategoryId": 3,
       "name": "Percentage of Processes With Documented Procedures",
@@ -5560,7 +5638,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 411,
+      "id": 418,
       "categoryId": 13,
       "subcategoryId": 71,
       "name": "Pipeline Conversion Rate",
@@ -5572,7 +5650,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 412,
+      "id": 419,
       "categoryId": 13,
       "subcategoryId": 71,
       "name": "Pipeline Flow Rate",
@@ -5584,7 +5662,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 413,
+      "id": 420,
       "categoryId": 13,
       "subcategoryId": 68,
       "name": "Pipeline Forecast Value",
@@ -5596,7 +5674,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 414,
+      "id": 421,
       "categoryId": 13,
       "subcategoryId": 71,
       "name": "Pipeline Leakage",
@@ -5608,7 +5686,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 415,
+      "id": 422,
       "categoryId": 11,
       "subcategoryId": 64,
       "name": "Planned Finish Date vs Actual Finish Date",
@@ -5620,7 +5698,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 416,
+      "id": 423,
       "categoryId": 11,
       "subcategoryId": 64,
       "name": "Planned Resource Cost vs Actual Resource Cost",
@@ -5632,7 +5710,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 417,
+      "id": 424,
       "categoryId": 11,
       "subcategoryId": 64,
       "name": "Planned Resource Utilization vs Actual Resource Utilization",
@@ -5644,7 +5722,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 418,
+      "id": 425,
       "categoryId": 11,
       "subcategoryId": 64,
       "name": "Planned Start Date vs Actual Start Date",
@@ -5656,7 +5734,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 419,
+      "id": 426,
       "categoryId": 10,
       "subcategoryId": 53,
       "name": "Podcast Website Backlinks",
@@ -5668,7 +5746,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 420,
+      "id": 427,
       "categoryId": 10,
       "subcategoryId": 56,
       "name": "Post Reach",
@@ -5680,7 +5758,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 421,
+      "id": 428,
       "categoryId": 13,
       "subcategoryId": 75,
       "name": "Post-Bid Client Engagement Level",
@@ -5692,7 +5770,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 422,
+      "id": 429,
       "categoryId": 14,
       "subcategoryId": 80,
       "name": "Post-Mortem / Root Cause Analysis Timeliness",
@@ -5704,7 +5782,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 423,
+      "id": 430,
       "categoryId": 14,
       "subcategoryId": 80,
       "name": "Post-Mortem Action Item Completion Rate",
@@ -5716,7 +5794,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 424,
+      "id": 431,
       "categoryId": 13,
       "subcategoryId": 72,
       "name": "Price Premium Against Competitors",
@@ -5728,7 +5806,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 425,
+      "id": 432,
       "categoryId": 3,
       "subcategoryId": 17,
       "name": "Proactive Emails Sent",
@@ -5740,7 +5818,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 426,
+      "id": 433,
       "categoryId": 11,
       "subcategoryId": 62,
       "name": "Process Efficiency",
@@ -5752,7 +5830,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 427,
+      "id": 434,
       "categoryId": 13,
       "subcategoryId": 72,
       "name": "Product Growth Rate",
@@ -5764,7 +5842,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 428,
+      "id": 435,
       "categoryId": 13,
       "subcategoryId": 72,
       "name": "Product Market Share",
@@ -5776,7 +5854,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 429,
+      "id": 436,
       "categoryId": 13,
       "subcategoryId": 72,
       "name": "Product Profit Margin",
@@ -5788,7 +5866,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 430,
+      "id": 437,
       "categoryId": 13,
       "subcategoryId": 72,
       "name": "Product Return Rate",
@@ -5800,7 +5878,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 431,
+      "id": 438,
       "categoryId": 13,
       "subcategoryId": 72,
       "name": "Product Revenue Contribution",
@@ -5812,7 +5890,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 432,
+      "id": 439,
       "categoryId": 13,
       "subcategoryId": 72,
       "name": "Product Sales Volume",
@@ -5824,7 +5902,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 433,
+      "id": 440,
       "categoryId": 13,
       "subcategoryId": 72,
       "name": "Product Satisfaction Score",
@@ -5836,7 +5914,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 434,
+      "id": 441,
       "categoryId": 15,
       "subcategoryId": 85,
       "name": "Product Signups",
@@ -5848,7 +5926,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 435,
+      "id": 442,
       "categoryId": 11,
       "subcategoryId": 63,
       "name": "Project Completion Forecast",
@@ -5860,7 +5938,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 436,
+      "id": 443,
       "categoryId": 2,
       "subcategoryId": 7,
       "name": "Project Overrun Rate",
@@ -5872,7 +5950,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 437,
+      "id": 444,
       "categoryId": 11,
       "subcategoryId": 60,
       "name": "Project Return on Investment (ROI)",
@@ -5884,7 +5962,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 438,
+      "id": 445,
       "categoryId": 2,
       "subcategoryId": 13,
       "name": "Project Scope Change Frequency",
@@ -5896,7 +5974,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 439,
+      "id": 446,
       "categoryId": 7,
       "subcategoryId": 32,
       "name": "Promotion Rate",
@@ -5908,7 +5986,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 440,
+      "id": 447,
       "categoryId": 7,
       "subcategoryId": 31,
       "name": "Promotion Rate by Demographic Group",
@@ -5920,7 +5998,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 441,
+      "id": 448,
       "categoryId": 2,
       "subcategoryId": 8,
       "name": "Proposal or Bid Win Rate",
@@ -5932,7 +6010,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 442,
+      "id": 449,
       "categoryId": 13,
       "subcategoryId": 67,
       "name": "Prospecting Activity Volume",
@@ -5944,7 +6022,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 443,
+      "id": 450,
       "categoryId": 15,
       "subcategoryId": 84,
       "name": "Pull Request Resolution Time",
@@ -5956,7 +6034,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 444,
+      "id": 451,
       "categoryId": 14,
       "subcategoryId": 77,
       "name": "Pull Request Size",
@@ -5968,7 +6046,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 445,
+      "id": 452,
       "categoryId": 15,
       "subcategoryId": 84,
       "name": "Pull Requests Submitted",
@@ -5980,7 +6058,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 446,
+      "id": 453,
       "categoryId": 11,
       "subcategoryId": 62,
       "name": "Queue Size",
@@ -5992,7 +6070,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 447,
+      "id": 454,
       "categoryId": 13,
       "subcategoryId": 71,
       "name": "Quota Attainment Rate",
@@ -6004,7 +6082,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 448,
+      "id": 455,
       "categoryId": 5,
       "subcategoryId": 20,
       "name": "R&D Investment Ratio",
@@ -6016,7 +6094,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 449,
+      "id": 456,
       "categoryId": 1,
       "subcategoryId": 3,
       "name": "Rate of Annual Policy Updates and Revisions",
@@ -6028,7 +6106,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 450,
+      "id": 457,
       "categoryId": 7,
       "subcategoryId": 37,
       "name": "Rate of Applicants Referred by Current Employees",
@@ -6040,7 +6118,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 451,
+      "id": 458,
       "categoryId": 8,
       "subcategoryId": 40,
       "name": "Rate of Correctly Picked Line Items",
@@ -6052,7 +6130,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 452,
+      "id": 459,
       "categoryId": 3,
       "subcategoryId": 18,
       "name": "Rate of Customers Given Satisfaction Surveys",
@@ -6064,7 +6142,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 453,
+      "id": 460,
       "categoryId": 1,
       "subcategoryId": 1,
       "name": "Rate of Data Access Reviews Completed",
@@ -6076,7 +6154,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 454,
+      "id": 461,
       "categoryId": 1,
       "subcategoryId": 1,
       "name": "Rate of Data Stored Encrypted",
@@ -6088,7 +6166,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 455,
+      "id": 462,
       "categoryId": 7,
       "subcategoryId": 33,
       "name": "Rate of Employee Growth Goals Met",
@@ -6100,7 +6178,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 456,
+      "id": 463,
       "categoryId": 7,
       "subcategoryId": 34,
       "name": "Rate of Employees Near Retirement Age",
@@ -6112,7 +6190,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 457,
+      "id": 464,
       "categoryId": 7,
       "subcategoryId": 33,
       "name": "Rate of Employees Who Would Recommend The Organization as an Employer",
@@ -6124,7 +6202,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 458,
+      "id": 465,
       "categoryId": 1,
       "subcategoryId": 3,
       "name": "Rate of Employees Who’ve Read and Signed Compliance Policies",
@@ -6136,7 +6214,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 459,
+      "id": 466,
       "categoryId": 1,
       "subcategoryId": 6,
       "name": "Rate of Employees Who've Undergone Compliance Training Annually",
@@ -6148,7 +6226,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 460,
+      "id": 467,
       "categoryId": 7,
       "subcategoryId": 32,
       "name": "Rate of Employees with Development Plans",
@@ -6160,7 +6238,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 461,
+      "id": 468,
       "categoryId": 8,
       "subcategoryId": 42,
       "name": "Rate of Expired Items to Inventory Value",
@@ -6172,7 +6250,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 462,
+      "id": 469,
       "categoryId": 7,
       "subcategoryId": 33,
       "name": "Rate of High-Performing Employees",
@@ -6184,7 +6262,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 463,
+      "id": 470,
       "categoryId": 8,
       "subcategoryId": 41,
       "name": "Rate of Inventory Items Incorrectly Located",
@@ -6196,7 +6274,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 464,
+      "id": 471,
       "categoryId": 8,
       "subcategoryId": 41,
       "name": "Rate of Inventory Items with Incorrect Stock Balances",
@@ -6208,7 +6286,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 465,
+      "id": 472,
       "categoryId": 8,
       "subcategoryId": 45,
       "name": "Rate of Items Tracked with RFID",
@@ -6220,7 +6298,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 466,
+      "id": 473,
       "categoryId": 7,
       "subcategoryId": 33,
       "name": "Rate of Low-Performing Employees",
@@ -6232,7 +6310,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 467,
+      "id": 474,
       "categoryId": 7,
       "subcategoryId": 32,
       "name": "Rate of Managers Trained in Key Processes",
@@ -6244,7 +6322,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 468,
+      "id": 475,
       "categoryId": 7,
       "subcategoryId": 32,
       "name": "Rate of Monthly 1-on-1 Meetings for All Staff",
@@ -6256,7 +6334,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 469,
+      "id": 476,
       "categoryId": 11,
       "subcategoryId": 62,
       "name": "Rate of Overdue Project Tasks",
@@ -6268,7 +6346,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 470,
+      "id": 477,
       "categoryId": 7,
       "subcategoryId": 33,
       "name": "Rate of Performance Reviews Completed On Time",
@@ -6280,7 +6358,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 471,
+      "id": 478,
       "categoryId": 1,
       "subcategoryId": 3,
       "name": "Rate of Policy Violations or Breaches",
@@ -6292,7 +6370,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 472,
+      "id": 479,
       "categoryId": 1,
       "subcategoryId": 2,
       "name": "Rate of Processes with Up-to-Date Documentation",
@@ -6304,7 +6382,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 473,
+      "id": 480,
       "categoryId": 11,
       "subcategoryId": 60,
       "name": "Rate of Profitable Projects",
@@ -6316,7 +6394,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 474,
+      "id": 481,
       "categoryId": 11,
       "subcategoryId": 62,
       "name": "Rate of Projects On Time",
@@ -6328,7 +6406,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 475,
+      "id": 482,
       "categoryId": 11,
       "subcategoryId": 62,
       "name": "Rate of Projects with High Risk Profile",
@@ -6340,7 +6418,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 476,
+      "id": 483,
       "categoryId": 11,
       "subcategoryId": 60,
       "name": "Rate of Projects with Negative ROI",
@@ -6352,7 +6430,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 477,
+      "id": 484,
       "categoryId": 1,
       "subcategoryId": 4,
       "name": "Rate of Recurrence of Previously Mitigated Risks",
@@ -6364,7 +6442,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 478,
+      "id": 485,
       "categoryId": 2,
       "subcategoryId": 10,
       "name": "Rate of Repeat Business",
@@ -6376,7 +6454,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 479,
+      "id": 486,
       "categoryId": 1,
       "subcategoryId": 4,
       "name": "Rate of Risks Mitigated Within a Defined Period",
@@ -6388,7 +6466,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 480,
+      "id": 487,
       "categoryId": 8,
       "subcategoryId": 42,
       "name": "Rate of Safety Stock Used",
@@ -6400,7 +6478,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 481,
+      "id": 488,
       "categoryId": 7,
       "subcategoryId": 31,
       "name": "Rate of Staff From Minority Ethnic Groups",
@@ -6412,7 +6490,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 482,
+      "id": 489,
       "categoryId": 1,
       "subcategoryId": 1,
       "name": "Rate of Successful Data Restoration Tests",
@@ -6424,7 +6502,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 483,
+      "id": 490,
       "categoryId": 1,
       "subcategoryId": 5,
       "name": "Rate of Third-Parties Audited Annually",
@@ -6436,7 +6514,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 484,
+      "id": 491,
       "categoryId": 1,
       "subcategoryId": 5,
       "name": "Rate of Third-Party Compliance Violations",
@@ -6448,7 +6526,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 485,
+      "id": 492,
       "categoryId": 11,
       "subcategoryId": 62,
       "name": "Rate of Understaffed Projects",
@@ -6460,7 +6538,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 486,
+      "id": 493,
       "categoryId": 7,
       "subcategoryId": 31,
       "name": "Rate of Women in Management Positions",
@@ -6472,7 +6550,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 487,
+      "id": 494,
       "categoryId": 2,
       "subcategoryId": 7,
       "name": "Rate of Work Chargeability",
@@ -6484,7 +6562,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 488,
+      "id": 495,
       "categoryId": 5,
       "subcategoryId": 19,
       "name": "Ratio of Accurate Financial Statements",
@@ -6496,7 +6574,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 489,
+      "id": 496,
       "categoryId": 5,
       "subcategoryId": 26,
       "name": "Ratio of Invoices Disputed",
@@ -6508,7 +6586,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 490,
+      "id": 497,
       "categoryId": 10,
       "subcategoryId": 53,
       "name": "Recording Time per Episode",
@@ -6520,7 +6598,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 491,
+      "id": 498,
       "categoryId": 10,
       "subcategoryId": 58,
       "name": "Recording Time per Video",
@@ -6532,7 +6610,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 492,
+      "id": 499,
       "categoryId": 5,
       "subcategoryId": 23,
       "name": "Recurring Revenue",
@@ -6544,7 +6622,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 493,
+      "id": 500,
       "categoryId": 10,
       "subcategoryId": 54,
       "name": "Referral Traffic from PR Efforts",
@@ -6556,7 +6634,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 494,
+      "id": 501,
       "categoryId": 15,
       "subcategoryId": 85,
       "name": "Registration Rate",
@@ -6568,7 +6646,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 495,
+      "id": 502,
       "categoryId": 7,
       "subcategoryId": 38,
       "name": "Remote Technology Utilization Rate",
@@ -6580,7 +6658,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 496,
+      "id": 503,
       "categoryId": 7,
       "subcategoryId": 38,
       "name": "Remote Work Satisfaction Rate",
@@ -6592,7 +6670,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 497,
+      "id": 504,
       "categoryId": 1,
       "subcategoryId": 6,
       "name": "Repeat Policy Violations Post-Training",
@@ -6604,7 +6682,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 498,
+      "id": 505,
       "categoryId": 3,
       "subcategoryId": 17,
       "name": "Reply-to-Resolve",
@@ -6616,7 +6694,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 499,
+      "id": 506,
       "categoryId": 1,
       "subcategoryId": 6,
       "name": "Reported Breaches by New Employees",
@@ -6628,7 +6706,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 500,
+      "id": 507,
       "categoryId": 10,
       "subcategoryId": 53,
       "name": "Repurposed Pieces of Content per Episode",
@@ -6640,7 +6718,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 501,
+      "id": 508,
       "categoryId": 10,
       "subcategoryId": 53,
       "name": "Research Hours per Episode",
@@ -6652,7 +6730,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 502,
+      "id": 509,
       "categoryId": 11,
       "subcategoryId": 62,
       "name": "Resource Availability Rate",
@@ -6664,7 +6742,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 503,
+      "id": 510,
       "categoryId": 14,
       "subcategoryId": 77,
       "name": "Response Time",
@@ -6676,7 +6754,19 @@
       "upvoteCount": 0
     },
     {
-      "id": 504,
+      "id": 511,
+      "categoryId": 14,
+      "subcategoryId": 79,
+      "name": "Response Time",
+      "slug": "response-time-78896748",
+      "unit": "time",
+      "description": "The time taken for the system to respond to a request in a production environment. A critical factor for user experience and system efficiency.",
+      "formula": "Average Time for System Response",
+      "example": "If the system's average response time is 200ms, the response time is 200ms.",
+      "upvoteCount": 0
+    },
+    {
+      "id": 512,
       "categoryId": 10,
       "subcategoryId": 57,
       "name": "Return on Advertising Spend",
@@ -6688,7 +6778,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 505,
+      "id": 513,
       "categoryId": 10,
       "subcategoryId": 46,
       "name": "Return on Advertising Spend from Partnerships",
@@ -6700,7 +6790,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 506,
+      "id": 514,
       "categoryId": 5,
       "subcategoryId": 28,
       "name": "Return on Equity",
@@ -6712,7 +6802,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 507,
+      "id": 515,
       "categoryId": 10,
       "subcategoryId": 59,
       "name": "Returning vs New Visitors",
@@ -6724,7 +6814,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 508,
+      "id": 516,
       "categoryId": 10,
       "subcategoryId": 58,
       "name": "Revenue Generated from Videos",
@@ -6736,7 +6826,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 509,
+      "id": 517,
       "categoryId": 13,
       "subcategoryId": 68,
       "name": "Revenue Run Rate",
@@ -6748,7 +6838,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 510,
+      "id": 518,
       "categoryId": 13,
       "subcategoryId": 75,
       "name": "RFP Response Rate",
@@ -6760,7 +6850,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 511,
+      "id": 519,
       "categoryId": 10,
       "subcategoryId": 54,
       "name": "ROI from PR Campaigns",
@@ -6772,7 +6862,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 512,
+      "id": 520,
       "categoryId": 10,
       "subcategoryId": 58,
       "name": "ROI From Videos",
@@ -6784,7 +6874,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 513,
+      "id": 521,
       "categoryId": 7,
       "subcategoryId": 35,
       "name": "Safety-related Incident Rate",
@@ -6796,7 +6886,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 514,
+      "id": 522,
       "categoryId": 13,
       "subcategoryId": 70,
       "name": "Sales Accepted Leads (SALs) to Sales Qualified Leads (SQLs)",
@@ -6808,7 +6898,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 515,
+      "id": 523,
       "categoryId": 13,
       "subcategoryId": 73,
       "name": "Sales by Region",
@@ -6820,7 +6910,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 516,
+      "id": 524,
       "categoryId": 13,
       "subcategoryId": 74,
       "name": "Sales Certification Rates",
@@ -6832,7 +6922,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 517,
+      "id": 525,
       "categoryId": 13,
       "subcategoryId": 74,
       "name": "Sales Coach-to-Participant Ratio",
@@ -6844,7 +6934,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 518,
+      "id": 526,
       "categoryId": 10,
       "subcategoryId": 53,
       "name": "Sales Connected to the Show",
@@ -6856,7 +6946,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 519,
+      "id": 527,
       "categoryId": 13,
       "subcategoryId": 71,
       "name": "Sales Cycle Length",
@@ -6868,7 +6958,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 520,
+      "id": 528,
       "categoryId": 13,
       "subcategoryId": 70,
       "name": "Sales Feedback on Lead Quality",
@@ -6880,7 +6970,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 521,
+      "id": 529,
       "categoryId": 13,
       "subcategoryId": 70,
       "name": "Sales Follow-Up on Marketing Leads",
@@ -6892,7 +6982,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 522,
+      "id": 530,
       "categoryId": 13,
       "subcategoryId": 68,
       "name": "Sales Forecast Accuracy",
@@ -6904,7 +6994,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 523,
+      "id": 531,
       "categoryId": 13,
       "subcategoryId": 69,
       "name": "Sales Growth by Territory",
@@ -6916,7 +7006,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 524,
+      "id": 532,
       "categoryId": 13,
       "subcategoryId": 73,
       "name": "Sales per Representative",
@@ -6928,7 +7018,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 525,
+      "id": 533,
       "categoryId": 13,
       "subcategoryId": 71,
       "name": "Sales Pipeline Value",
@@ -6940,7 +7030,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 526,
+      "id": 534,
       "categoryId": 13,
       "subcategoryId": 68,
       "name": "Sales Quota Attainment",
@@ -6952,7 +7042,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 527,
+      "id": 535,
       "categoryId": 13,
       "subcategoryId": 74,
       "name": "Sales Skill Improvement Score",
@@ -6964,7 +7054,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 528,
+      "id": 536,
       "categoryId": 13,
       "subcategoryId": 73,
       "name": "Sales Target Achievement Rate",
@@ -6976,7 +7066,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 529,
+      "id": 537,
       "categoryId": 13,
       "subcategoryId": 67,
       "name": "Sales Task Completion Rate",
@@ -6988,7 +7078,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 530,
+      "id": 538,
       "categoryId": 13,
       "subcategoryId": 69,
       "name": "Sales Territory Volume",
@@ -7000,7 +7090,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 531,
+      "id": 539,
       "categoryId": 13,
       "subcategoryId": 74,
       "name": "Sales Training Completion Rate",
@@ -7012,7 +7102,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 532,
+      "id": 540,
       "categoryId": 13,
       "subcategoryId": 74,
       "name": "Sales Training ROI",
@@ -7024,7 +7114,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 533,
+      "id": 541,
       "categoryId": 13,
       "subcategoryId": 74,
       "name": "Sales Training Satisfaction Score",
@@ -7036,7 +7126,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 534,
+      "id": 542,
       "categoryId": 13,
       "subcategoryId": 67,
       "name": "Sales Visit Frequency",
@@ -7048,7 +7138,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 535,
+      "id": 543,
       "categoryId": 7,
       "subcategoryId": 30,
       "name": "Satisfaction with Salary and Benefits",
@@ -7060,7 +7150,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 536,
+      "id": 544,
       "categoryId": 11,
       "subcategoryId": 64,
       "name": "Schedule Performance Index",
@@ -7072,7 +7162,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 537,
+      "id": 545,
       "categoryId": 11,
       "subcategoryId": 64,
       "name": "Schedule Variance",
@@ -7084,7 +7174,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 538,
+      "id": 546,
       "categoryId": 10,
       "subcategoryId": 53,
       "name": "Scheduling Time per Guest",
@@ -7096,7 +7186,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 539,
+      "id": 547,
       "categoryId": 15,
       "subcategoryId": 83,
       "name": "Screen Resolution",
@@ -7108,7 +7198,19 @@
       "upvoteCount": 0
     },
     {
-      "id": 540,
+      "id": 548,
+      "categoryId": 15,
+      "subcategoryId": 86,
+      "name": "Screen Resolution",
+      "slug": "screen-resolution-d61e6ad1",
+      "unit": "list",
+      "description": "Screen Resolution metrics identify the range of screen resolutions among the user base. This information is crucial for optimizing the app or software’s visual layout and design to ensure compatibility and a good user experience across different screen sizes.",
+      "formula": "List of Screen Resolutions",
+      "example": "Resolutions might range from 1280x720 to 2560x1440, indicating the need for a responsive design.",
+      "upvoteCount": 0
+    },
+    {
+      "id": 549,
       "categoryId": 10,
       "subcategoryId": 55,
       "name": "Search Bounce Rate",
@@ -7120,7 +7222,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 541,
+      "id": 550,
       "categoryId": 10,
       "subcategoryId": 55,
       "name": "Search Click-Through Rate",
@@ -7132,7 +7234,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 542,
+      "id": 551,
       "categoryId": 8,
       "subcategoryId": 43,
       "name": "Sell-through Rate",
@@ -7144,7 +7246,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 543,
+      "id": 552,
       "categoryId": 10,
       "subcategoryId": 54,
       "name": "Sentiment Analysis",
@@ -7156,7 +7258,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 544,
+      "id": 553,
       "categoryId": 14,
       "subcategoryId": 81,
       "name": "Service Level Indicators",
@@ -7168,7 +7270,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 545,
+      "id": 554,
       "categoryId": 14,
       "subcategoryId": 81,
       "name": "Service Level Objectives",
@@ -7180,7 +7282,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 546,
+      "id": 555,
       "categoryId": 2,
       "subcategoryId": 9,
       "name": "Service Line Diversification",
@@ -7192,7 +7294,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 547,
+      "id": 556,
       "categoryId": 15,
       "subcategoryId": 85,
       "name": "Session Depth",
@@ -7204,7 +7306,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 548,
+      "id": 557,
       "categoryId": 15,
       "subcategoryId": 85,
       "name": "Session Interval",
@@ -7216,7 +7318,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 549,
+      "id": 558,
       "categoryId": 15,
       "subcategoryId": 85,
       "name": "Session Length",
@@ -7228,7 +7330,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 550,
+      "id": 559,
       "categoryId": 14,
       "subcategoryId": 80,
       "name": "Severity of Incidents",
@@ -7240,7 +7342,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 551,
+      "id": 560,
       "categoryId": 10,
       "subcategoryId": 54,
       "name": "Share of Voice",
@@ -7252,7 +7354,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 552,
+      "id": 561,
       "categoryId": 10,
       "subcategoryId": 58,
       "name": "Shares per Video",
@@ -7264,7 +7366,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 553,
+      "id": 562,
       "categoryId": 8,
       "subcategoryId": 42,
       "name": "Size of Safety Stock",
@@ -7276,7 +7378,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 554,
+      "id": 563,
       "categoryId": 10,
       "subcategoryId": 48,
       "name": "Slogan Recall Rate",
@@ -7288,7 +7390,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 555,
+      "id": 564,
       "categoryId": 10,
       "subcategoryId": 56,
       "name": "Social Conversion Rate",
@@ -7300,7 +7402,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 556,
+      "id": 565,
       "categoryId": 10,
       "subcategoryId": 56,
       "name": "Social Media Impressions",
@@ -7312,7 +7414,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 557,
+      "id": 566,
       "categoryId": 10,
       "subcategoryId": 56,
       "name": "Social Response Rate and Time",
@@ -7324,7 +7426,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 558,
+      "id": 567,
       "categoryId": 10,
       "subcategoryId": 56,
       "name": "Social Share of Voice",
@@ -7336,7 +7438,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 559,
+      "id": 568,
       "categoryId": 10,
       "subcategoryId": 53,
       "name": "Social Shares per Episode",
@@ -7348,7 +7450,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 560,
+      "id": 569,
       "categoryId": 10,
       "subcategoryId": 47,
       "name": "Social Shares per Post",
@@ -7360,7 +7462,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 561,
+      "id": 570,
       "categoryId": 5,
       "subcategoryId": 20,
       "name": "Software Development Cost Variance",
@@ -7372,7 +7474,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 562,
+      "id": 571,
       "categoryId": 11,
       "subcategoryId": 65,
       "name": "Stakeholder Engagement Rate",
@@ -7384,7 +7486,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 563,
+      "id": 572,
       "categoryId": 11,
       "subcategoryId": 65,
       "name": "Stakeholder Satisfaction Survey Score",
@@ -7396,7 +7498,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 564,
+      "id": 573,
       "categoryId": 15,
       "subcategoryId": 85,
       "name": "Stickiness Ratio",
@@ -7408,7 +7510,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 565,
+      "id": 574,
       "categoryId": 8,
       "subcategoryId": 43,
       "name": "Stock Availability Rate",
@@ -7420,7 +7522,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 566,
+      "id": 575,
       "categoryId": 8,
       "subcategoryId": 43,
       "name": "Stock Cover",
@@ -7432,7 +7534,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 567,
+      "id": 576,
       "categoryId": 8,
       "subcategoryId": 42,
       "name": "Stock Obsolescence Rate",
@@ -7444,7 +7546,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 568,
+      "id": 577,
       "categoryId": 8,
       "subcategoryId": 43,
       "name": "Stockouts in Period",
@@ -7456,7 +7558,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 569,
+      "id": 578,
       "categoryId": 10,
       "subcategoryId": 58,
       "name": "Subscriber Growth Rate",
@@ -7468,7 +7570,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 570,
+      "id": 579,
       "categoryId": 10,
       "subcategoryId": 51,
       "name": "Subscriber List Growth",
@@ -7480,7 +7582,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 571,
+      "id": 580,
       "categoryId": 7,
       "subcategoryId": 34,
       "name": "Succession Readiness Rate",
@@ -7492,7 +7594,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 572,
+      "id": 581,
       "categoryId": 8,
       "subcategoryId": 44,
       "name": "Supplier Compliance Rate",
@@ -7504,7 +7606,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 573,
+      "id": 582,
       "categoryId": 8,
       "subcategoryId": 44,
       "name": "Supplier Defect Rate",
@@ -7516,7 +7618,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 574,
+      "id": 583,
       "categoryId": 8,
       "subcategoryId": 44,
       "name": "Supplier Lead Time Variability",
@@ -7528,7 +7630,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 575,
+      "id": 584,
       "categoryId": 8,
       "subcategoryId": 44,
       "name": "Supplier On-time Delivery Rate",
@@ -7540,7 +7642,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 576,
+      "id": 585,
       "categoryId": 1,
       "subcategoryId": 2,
       "name": "System Changes Made Without Documentation Updates",
@@ -7552,7 +7654,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 577,
+      "id": 586,
       "categoryId": 15,
       "subcategoryId": 86,
       "name": "System Usability Scale",
@@ -7564,7 +7666,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 578,
+      "id": 587,
       "categoryId": 15,
       "subcategoryId": 86,
       "name": "Task Success Rate",
@@ -7576,7 +7678,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 579,
+      "id": 588,
       "categoryId": 5,
       "subcategoryId": 29,
       "name": "Tax Audit Pass Rate",
@@ -7588,7 +7690,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 580,
+      "id": 589,
       "categoryId": 5,
       "subcategoryId": 29,
       "name": "Tax Savings Rate",
@@ -7600,7 +7702,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 581,
+      "id": 590,
       "categoryId": 11,
       "subcategoryId": 65,
       "name": "Team Mood",
@@ -7612,7 +7714,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 582,
+      "id": 591,
       "categoryId": 11,
       "subcategoryId": 65,
       "name": "Team Turnover",
@@ -7624,7 +7726,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 583,
+      "id": 592,
       "categoryId": 14,
       "subcategoryId": 79,
       "name": "Team Velocity",
@@ -7636,7 +7738,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 584,
+      "id": 593,
       "categoryId": 11,
       "subcategoryId": 61,
       "name": "Technical Performance Measures",
@@ -7648,7 +7750,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 585,
+      "id": 594,
       "categoryId": 13,
       "subcategoryId": 69,
       "name": "Territory Coverage Ratio",
@@ -7660,7 +7762,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 586,
+      "id": 595,
       "categoryId": 13,
       "subcategoryId": 69,
       "name": "Territory Penetration Rate",
@@ -7672,7 +7774,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 587,
+      "id": 596,
       "categoryId": 13,
       "subcategoryId": 69,
       "name": "Territory Profitability Index",
@@ -7684,7 +7786,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 588,
+      "id": 597,
       "categoryId": 13,
       "subcategoryId": 69,
       "name": "Territory Quota Attainment Rate",
@@ -7696,7 +7798,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 589,
+      "id": 598,
       "categoryId": 14,
       "subcategoryId": 77,
       "name": "Test Pass / Failure Rate",
@@ -7708,7 +7810,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 590,
+      "id": 599,
       "categoryId": 1,
       "subcategoryId": 5,
       "name": "Third Parties Compliant with Desired Standards",
@@ -7720,7 +7822,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 591,
+      "id": 600,
       "categoryId": 15,
       "subcategoryId": 86,
       "name": "Time On Task",
@@ -7732,7 +7834,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 592,
+      "id": 601,
       "categoryId": 10,
       "subcategoryId": 53,
       "name": "Time Required for Creation of Promo Materials",
@@ -7744,7 +7846,19 @@
       "upvoteCount": 0
     },
     {
-      "id": 593,
+      "id": 602,
+      "categoryId": 10,
+      "subcategoryId": 58,
+      "name": "Time Required for Creation of Promo Materials",
+      "slug": "time-required-for-creation-of-promo-materials-57f9f7d8",
+      "unit": "time",
+      "description": "The duration spent creating promotional content like trailers, teasers, and snippets for the video. Gives insight into promotional efforts and time investment in marketing the video.",
+      "formula": "911",
+      "example": null,
+      "upvoteCount": 0
+    },
+    {
+      "id": 603,
       "categoryId": 10,
       "subcategoryId": 53,
       "name": "Time Required for Post-Production per Episode",
@@ -7756,7 +7870,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 594,
+      "id": 604,
       "categoryId": 10,
       "subcategoryId": 58,
       "name": "Time Required for Post-Production per Video",
@@ -7768,7 +7882,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 595,
+      "id": 605,
       "categoryId": 14,
       "subcategoryId": 77,
       "name": "Time Spent on Technical Debt",
@@ -7780,7 +7894,19 @@
       "upvoteCount": 0
     },
     {
-      "id": 596,
+      "id": 606,
+      "categoryId": 14,
+      "subcategoryId": 79,
+      "name": "Time Spent on Technical Debt",
+      "slug": "time-spent-on-technical-debt-85160d4b",
+      "unit": "time",
+      "description": "Tracks the time dedicated to addressing technical debt, including code refactoring and design improvement, essential for long-term project health.",
+      "formula": "Total Time Spent on Technical Debt Activities",
+      "example": "If a team spends 40 hours in a month on technical debt, the time spent is 40 hours.",
+      "upvoteCount": 0
+    },
+    {
+      "id": 607,
       "categoryId": 1,
       "subcategoryId": 3,
       "name": "Time Taken to Close Audit Findings",
@@ -7792,7 +7918,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 597,
+      "id": 608,
       "categoryId": 1,
       "subcategoryId": 5,
       "name": "Time Taken to Onboard a Third-Party",
@@ -7804,7 +7930,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 598,
+      "id": 609,
       "categoryId": 1,
       "subcategoryId": 2,
       "name": "Time Taken to Update Documentation Post Process Changes",
@@ -7816,7 +7942,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 599,
+      "id": 610,
       "categoryId": 2,
       "subcategoryId": 8,
       "name": "Time to Acquire New Clients",
@@ -7828,7 +7954,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 600,
+      "id": 611,
       "categoryId": 7,
       "subcategoryId": 32,
       "name": "Time to Answer Employee Suggestions",
@@ -7840,7 +7966,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 601,
+      "id": 612,
       "categoryId": 13,
       "subcategoryId": 75,
       "name": "Time to Bid Preparation",
@@ -7852,7 +7978,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 602,
+      "id": 613,
       "categoryId": 2,
       "subcategoryId": 7,
       "name": "Time to Collect Payment From Clients",
@@ -7864,7 +7990,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 603,
+      "id": 614,
       "categoryId": 14,
       "subcategoryId": 76,
       "name": "Time To Complete Model Training",
@@ -7876,7 +8002,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 604,
+      "id": 615,
       "categoryId": 14,
       "subcategoryId": 76,
       "name": "Time To Deploy Completed Model",
@@ -7888,7 +8014,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 605,
+      "id": 616,
       "categoryId": 15,
       "subcategoryId": 82,
       "name": "Time To First API Call",
@@ -7900,7 +8026,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 606,
+      "id": 617,
       "categoryId": 15,
       "subcategoryId": 85,
       "name": "Time To First Purchase",
@@ -7912,7 +8038,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 607,
+      "id": 618,
       "categoryId": 7,
       "subcategoryId": 37,
       "name": "Time to Hire",
@@ -7924,7 +8050,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 608,
+      "id": 619,
       "categoryId": 14,
       "subcategoryId": 80,
       "name": "Time to Learn From Incidents",
@@ -7936,7 +8062,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 609,
+      "id": 620,
       "categoryId": 14,
       "subcategoryId": 77,
       "name": "Time to Merge",
@@ -7948,7 +8074,19 @@
       "upvoteCount": 0
     },
     {
-      "id": 610,
+      "id": 621,
+      "categoryId": 14,
+      "subcategoryId": 79,
+      "name": "Time to Merge",
+      "slug": "time-to-merge-f3029605",
+      "unit": "time",
+      "description": "Reflects the average duration from when a pull request is opened until it is merged. This metric indicates the efficiency of the code review and integration process.",
+      "formula": "(Total Time to Merge All PRs / Number of PRs)",
+      "example": "If 10 PRs take an average of 2 days each to merge, the time to merge is 2 days.",
+      "upvoteCount": 0
+    },
+    {
+      "id": 622,
       "categoryId": 2,
       "subcategoryId": 12,
       "name": "Time to Start",
@@ -7960,7 +8098,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 611,
+      "id": 623,
       "categoryId": 5,
       "subcategoryId": 28,
       "name": "Times Interest Earned Ratio",
@@ -7972,7 +8110,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 612,
+      "id": 624,
       "categoryId": 11,
       "subcategoryId": 63,
       "name": "To-Complete Performance Index",
@@ -7984,7 +8122,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 613,
+      "id": 625,
       "categoryId": 14,
       "subcategoryId": 81,
       "name": "Toil Reduction",
@@ -7996,7 +8134,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 614,
+      "id": 626,
       "categoryId": 10,
       "subcategoryId": 59,
       "name": "Top Exit Pages",
@@ -8008,7 +8146,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 615,
+      "id": 627,
       "categoryId": 10,
       "subcategoryId": 46,
       "name": "Top Performing Affiliates",
@@ -8020,7 +8158,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 616,
+      "id": 628,
       "categoryId": 10,
       "subcategoryId": 49,
       "name": "Top-Funnel Traffic",
@@ -8032,7 +8170,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 617,
+      "id": 629,
       "categoryId": 10,
       "subcategoryId": 46,
       "name": "Total Affiliate Partners",
@@ -8044,7 +8182,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 618,
+      "id": 630,
       "categoryId": 5,
       "subcategoryId": 23,
       "name": "Total Assets",
@@ -8056,7 +8194,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 619,
+      "id": 631,
       "categoryId": 10,
       "subcategoryId": 52,
       "name": "Total Attendees",
@@ -8068,7 +8206,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 620,
+      "id": 632,
       "categoryId": 1,
       "subcategoryId": 3,
       "name": "Total Audit Cost per Year",
@@ -8080,7 +8218,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 621,
+      "id": 633,
       "categoryId": 11,
       "subcategoryId": 62,
       "name": "Total Deviation of Time in Projects",
@@ -8092,7 +8230,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 622,
+      "id": 634,
       "categoryId": 5,
       "subcategoryId": 25,
       "name": "Total HR-related Expenses",
@@ -8104,7 +8242,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 623,
+      "id": 635,
       "categoryId": 15,
       "subcategoryId": 84,
       "name": "Total Issues Reported",
@@ -8116,7 +8254,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 624,
+      "id": 636,
       "categoryId": 5,
       "subcategoryId": 23,
       "name": "Total Liabilities",
@@ -8128,7 +8266,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 625,
+      "id": 637,
       "categoryId": 10,
       "subcategoryId": 47,
       "name": "Total Monthly Cost of Running a Blog",
@@ -8140,7 +8278,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 626,
+      "id": 638,
       "categoryId": 10,
       "subcategoryId": 53,
       "name": "Total Monthly Cost of Running a Podcast",
@@ -8152,7 +8290,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 627,
+      "id": 639,
       "categoryId": 5,
       "subcategoryId": 26,
       "name": "Total Outstanding Payable Amount",
@@ -8164,7 +8302,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 628,
+      "id": 640,
       "categoryId": 5,
       "subcategoryId": 22,
       "name": "Total Payroll Taxes",
@@ -8176,7 +8314,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 629,
+      "id": 641,
       "categoryId": 10,
       "subcategoryId": 53,
       "name": "Total Podcast Monthly Revenue",
@@ -8188,7 +8326,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 630,
+      "id": 642,
       "categoryId": 5,
       "subcategoryId": 20,
       "name": "Total Reimbursed Expenses",
@@ -8200,7 +8338,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 631,
+      "id": 643,
       "categoryId": 5,
       "subcategoryId": 29,
       "name": "Total Tax Paid",
@@ -8212,7 +8350,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 632,
+      "id": 644,
       "categoryId": 7,
       "subcategoryId": 32,
       "name": "Training Completion Rate",
@@ -8224,7 +8362,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 633,
+      "id": 645,
       "categoryId": 1,
       "subcategoryId": 6,
       "name": "Training Sessions Conducted Per Year",
@@ -8236,7 +8374,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 634,
+      "id": 646,
       "categoryId": 15,
       "subcategoryId": 85,
       "name": "Trial Conversion Rate",
@@ -8248,7 +8386,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 635,
+      "id": 647,
       "categoryId": 1,
       "subcategoryId": 1,
       "name": "Unauthorized Access Attempts Detected",
@@ -8260,7 +8398,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 636,
+      "id": 648,
       "categoryId": 15,
       "subcategoryId": 82,
       "name": "Unique API Consumers",
@@ -8272,7 +8410,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 637,
+      "id": 649,
       "categoryId": 10,
       "subcategoryId": 51,
       "name": "Unsubscribe Rate",
@@ -8284,7 +8422,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 638,
+      "id": 650,
       "categoryId": 13,
       "subcategoryId": 74,
       "name": "Upsell and Cross-sell Training Efficacy",
@@ -8296,7 +8434,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 639,
+      "id": 651,
       "categoryId": 13,
       "subcategoryId": 66,
       "name": "Upsell/Cross-sell Success Rate",
@@ -8308,7 +8446,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 640,
+      "id": 652,
       "categoryId": 1,
       "subcategoryId": 2,
       "name": "Uptime Percentage of Critical Monitoring Systems",
@@ -8320,7 +8458,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 641,
+      "id": 653,
       "categoryId": 15,
       "subcategoryId": 85,
       "name": "User Churn Rate",
@@ -8332,7 +8470,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 642,
+      "id": 654,
       "categoryId": 15,
       "subcategoryId": 86,
       "name": "User Error Rate",
@@ -8344,7 +8482,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 643,
+      "id": 655,
       "categoryId": 15,
       "subcategoryId": 85,
       "name": "User Growth Rate",
@@ -8356,7 +8494,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 644,
+      "id": 656,
       "categoryId": 15,
       "subcategoryId": 85,
       "name": "User Retention Rate",
@@ -8368,7 +8506,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 645,
+      "id": 657,
       "categoryId": 5,
       "subcategoryId": 25,
       "name": "Utility and Rent Expenses",
@@ -8380,7 +8518,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 646,
+      "id": 658,
       "categoryId": 8,
       "subcategoryId": 42,
       "name": "Value of Items Stolen from Inventory",
@@ -8392,7 +8530,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 647,
+      "id": 659,
       "categoryId": 8,
       "subcategoryId": 39,
       "name": "Value of Obsolete Stock",
@@ -8404,7 +8542,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 648,
+      "id": 660,
       "categoryId": 11,
       "subcategoryId": 63,
       "name": "Variance At Completion",
@@ -8416,7 +8554,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 649,
+      "id": 661,
       "categoryId": 10,
       "subcategoryId": 58,
       "name": "Video Click-Through Rate",
@@ -8428,7 +8566,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 650,
+      "id": 662,
       "categoryId": 10,
       "subcategoryId": 58,
       "name": "Video Conversion Rate",
@@ -8440,7 +8578,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 651,
+      "id": 663,
       "categoryId": 10,
       "subcategoryId": 58,
       "name": "Video Production Cost",
@@ -8452,7 +8590,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 652,
+      "id": 664,
       "categoryId": 10,
       "subcategoryId": 58,
       "name": "Video Promotion Budget",
@@ -8464,7 +8602,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 653,
+      "id": 665,
       "categoryId": 10,
       "subcategoryId": 58,
       "name": "Video Views",
@@ -8476,7 +8614,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 654,
+      "id": 666,
       "categoryId": 7,
       "subcategoryId": 34,
       "name": "Voluntary Turnover Rate",
@@ -8488,7 +8626,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 655,
+      "id": 667,
       "categoryId": 10,
       "subcategoryId": 59,
       "name": "Website Conversion Rate",
@@ -8500,7 +8638,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 656,
+      "id": 668,
       "categoryId": 10,
       "subcategoryId": 59,
       "name": "Website Traffic",
@@ -8512,7 +8650,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 657,
+      "id": 669,
       "categoryId": 10,
       "subcategoryId": 51,
       "name": "Website Traffic From Email",
@@ -8524,7 +8662,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 658,
+      "id": 670,
       "categoryId": 13,
       "subcategoryId": 75,
       "name": "Win/Loss Ratio After Bid Submission",
@@ -8536,7 +8674,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 659,
+      "id": 671,
       "categoryId": 11,
       "subcategoryId": 62,
       "name": "Work In Progress (WIP)",
@@ -8548,7 +8686,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 660,
+      "id": 672,
       "categoryId": 5,
       "subcategoryId": 24,
       "name": "Working Capital",
@@ -8560,7 +8698,7 @@
       "upvoteCount": 0
     },
     {
-      "id": 661,
+      "id": 673,
       "categoryId": 13,
       "subcategoryId": 73,
       "name": "Year-Over-Year (YOY) Sales Growth",
@@ -8570,54 +8708,6 @@
       "formula": "(Current Year Sales - Previous Year Sales) / Previous Year Sales * 100",
       "example": "If last year sales were $1 million and this year sales are $1.2 million, YOY growth is ((1.2M-1M)/1M)*100 = 20%.",
       "upvoteCount": 0
-    },
-    {
-      "categoryId": 8,
-      "subcategoryId": 87,
-      "name": "Forecast Accuracy",
-      "slug": "forecast-accuracy",
-      "unit": "percentage",
-      "description": "Indicates how close the forecasted demand was to the actual demand. A higher accuracy reduces the chances of stockouts and excess inventory, helping in efficient inventory management.",
-      "formula": "[(1 - (Absolute Value (Actual Demand - Forecasted Demand) / Actual Demand)) x 100]",
-      "example": "If the forecasted demand was 100 units and the actual demand was 110 units, the forecast accuracy is 90.91%.",
-      "upvoteCount": 1,
-      "id": 662
-    },
-    {
-      "categoryId": 8,
-      "subcategoryId": 87,
-      "name": "Forecast Bias",
-      "slug": "forecast-bias",
-      "unit": "number",
-      "description": "Represents the tendency of the forecasts to consistently be higher or lower than the actual demand. Understanding bias helps in refining forecasting methods.",
-      "formula": "Sum of (Forecasted Demand - Actual Demand) over a period",
-      "example": "If over a month, forecasted demand exceeds actual demand by 5 units each week, the forecast bias for that month is 20 units.",
-      "upvoteCount": 0,
-      "id": 663
-    },
-    {
-      "categoryId": 8,
-      "subcategoryId": 87,
-      "name": "Mean Absolute Percentage Error",
-      "slug": "mean-absolute-percentage-error",
-      "unit": "percentage",
-      "description": "Mean Absolute Percentage Error (MAPE) provides an average of the absolute percentage errors in the forecast. It offers a clear understanding of the magnitude of the forecasting error regardless of the direction.",
-      "formula": "Average of [(Absolute Value (Actual - Forecast) / Actual) x 100] over all items",
-      "example": "For three items with forecast errors of 5%, 10%, and 15%, the MAPE would be 10%.",
-      "upvoteCount": 0,
-      "id": 664
-    },
-    {
-      "categoryId": 8,
-      "subcategoryId": 87,
-      "name": "Rate of Stockouts Due to Forecast Inaccuracy",
-      "slug": "rate-of-stockouts-due-to-forecast-inaccuracy",
-      "unit": "percentage",
-      "description": "Measures the number of times stockouts occurred due to errors in demand forecasting. Reducing this rate ensures better customer service and sales.",
-      "formula": "(Number of Stockouts Due to Forecast Inaccuracy / Total Number of Stockouts) x 100",
-      "example": "If out of 10 stockouts, 4 occurred due to forecast inaccuracy, the rate is 40%.",
-      "upvoteCount": 0,
-      "id": 665
     }
   ]
 }

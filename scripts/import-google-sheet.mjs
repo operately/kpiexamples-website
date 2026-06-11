@@ -1,16 +1,14 @@
 import { execFileSync } from "node:child_process";
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 
 const SPREADSHEET_ID = "17rw8FVoOh9jKP6HGZARI5ba7EXTp-x3xBbWcOtoW0vs";
-const LIVE_SITE_URL = "https://kpiexamples.operately.com";
 const WORKBOOK_URL = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/export?format=xlsx`;
 const OUTPUT_PATH = resolve("src/data/catalog.json");
 const CONTENT_OUTPUT_PATH = resolve("src/data/page-content.json");
 const PRODUCTION_SHEET = "Production";
 const CATEGORIES_SHEET = "Categories";
-const CLASS_NAME_MAP = {};
 
 const UNIT_ALLOWLIST = new Set(["money", "percentage", "time", "number", "score", "ratio", "list"]);
 
@@ -21,16 +19,14 @@ main().catch((error) => {
 
 async function main() {
   const workbookPath = await downloadWorkbook();
-  const livePaths = await fetchLivePaths();
+  const existingCatalog = await readExistingCatalog();
   const workbook = readWorkbook(workbookPath);
   const productionRows = workbook.sheetRows(PRODUCTION_SHEET);
   const categoryRows = workbook.sheetRows(CATEGORIES_SHEET);
-  const catalog = buildCatalog(productionRows, categoryRows);
+  const catalog = buildCatalog(productionRows, categoryRows, existingCatalog);
+  const pageContent = buildEmptyPageContent();
 
-  assignLiveKpiSlugs(catalog, livePaths);
-  removeDuplicateKpiPaths(catalog);
-  await addLiveOnlyKpis(catalog, livePaths);
-  const pageContent = await fetchPageContent(catalog, livePaths);
+  ensureUniqueKpiSlugs(catalog);
 
   await mkdir(dirname(OUTPUT_PATH), { recursive: true });
   await writeFile(OUTPUT_PATH, `${JSON.stringify(catalog, null, 2)}\n`);
@@ -44,18 +40,31 @@ async function main() {
   );
 }
 
-async function fetchLivePaths() {
-  const response = await fetch(`${LIVE_SITE_URL}/sitemap`);
-  if (!response.ok) {
-    throw new Error(`Failed to download live sitemap: ${response.status} ${response.statusText}`);
+async function readExistingCatalog() {
+  try {
+    return JSON.parse(await readFile(OUTPUT_PATH, "utf8"));
+  } catch (error) {
+    if (error.code === "ENOENT") return null;
+    throw error;
   }
+}
 
-  const xml = await response.text();
-  return new Set([...xml.matchAll(/<loc>https:\/\/kpiexamples\.operately\.com\/(.*?)<\/loc>/g)].map((match) => match[1]));
+function buildEmptyPageContent() {
+  return {
+    generatedAt: new Date().toISOString(),
+    categories: {},
+    subcategories: {},
+  };
 }
 
 async function downloadWorkbook() {
-  const response = await fetch(WORKBOOK_URL);
+  let response;
+
+  try {
+    response = await fetch(WORKBOOK_URL);
+  } catch (error) {
+    throw new Error(`Failed to download Google Sheet workbook: ${formatNetworkError(error)}`);
+  }
 
   if (!response.ok) {
     throw new Error(`Failed to download Google Sheet workbook: ${response.status} ${response.statusText}`);
@@ -65,6 +74,13 @@ async function downloadWorkbook() {
   const bytes = Buffer.from(await response.arrayBuffer());
   await writeFile(workbookPath, bytes);
   return workbookPath;
+}
+
+function formatNetworkError(error) {
+  const cause = error.cause;
+  if (cause?.code && cause?.hostname) return `${cause.code} ${cause.hostname}`;
+  if (cause?.code) return cause.code;
+  return error.message;
 }
 
 function readWorkbook(workbookPath) {
@@ -155,7 +171,7 @@ function columnReferenceToIndex(reference) {
   return [...letters].reduce((index, letter) => index * 26 + letter.charCodeAt(0) - 64, 0) - 1;
 }
 
-function buildCatalog(productionRows, categoryRows) {
+function buildCatalog(productionRows, categoryRows, existingCatalog) {
   const categorySummaries = new Map(
     rowsWithoutHeader(categoryRows)
       .filter((row) => present(row[0]))
@@ -223,7 +239,7 @@ function buildCatalog(productionRows, categoryRows) {
     subcategories.map((subcategory) => [`${subcategory.categoryId}:${normalizeName(subcategory.name)}`, subcategory.id]),
   );
 
-  return {
+  const catalog = {
     generatedAt: new Date().toISOString(),
     categories,
     subcategories,
@@ -245,258 +261,83 @@ function buildCatalog(productionRows, categoryRows) {
       };
     }),
   };
+
+  preserveExistingKpiMetadata(catalog, existingCatalog);
+  return catalog;
 }
 
-function assignLiveKpiSlugs(catalog, livePaths) {
-  const liveSlugsByCategoryAndBaseSlug = new Map();
+function preserveExistingKpiMetadata(catalog, existingCatalog) {
+  if (!existingCatalog) return;
 
-  for (const path of livePaths) {
-    if (!isKpiPath(path)) continue;
+  const existingKpisBySignature = new Map();
 
-    const [categorySlug, kpiSlug] = path.split("/");
-    const baseSlug = removeFriendlyIdUuid(kpiSlug);
-    const key = `${categorySlug}/${baseSlug}`;
-    const liveSlugs = liveSlugsByCategoryAndBaseSlug.get(key) ?? [];
-    liveSlugs.push(kpiSlug);
-    liveSlugsByCategoryAndBaseSlug.set(key, liveSlugs);
+  for (const existingKpi of existingCatalog.kpis ?? []) {
+    const existingCategory = existingCatalog.categories?.find((category) => category.id === existingKpi.categoryId);
+    const existingSubcategory = existingCatalog.subcategories?.find(
+      (subcategory) => subcategory.id === existingKpi.subcategoryId,
+    );
+    if (!existingCategory || !existingSubcategory) continue;
+
+    const signature = kpiSignature(existingCategory, existingSubcategory, existingKpi);
+    const existingKpis = existingKpisBySignature.get(signature) ?? [];
+    existingKpis.push(existingKpi);
+    existingKpisBySignature.set(signature, existingKpis);
   }
 
-  for (const liveSlugs of liveSlugsByCategoryAndBaseSlug.values()) {
-    liveSlugs.sort((left, right) => Number(hasFriendlyIdUuid(left)) - Number(hasFriendlyIdUuid(right)));
-  }
-
-  const kpisByCategoryAndBaseSlug = new Map();
   for (const kpi of catalog.kpis) {
     const category = catalog.categories.find((candidate) => candidate.id === kpi.categoryId);
-    const key = `${category.slug}/${removeFriendlyIdUuid(kpi.slug)}`;
-    const groupedKpis = kpisByCategoryAndBaseSlug.get(key) ?? [];
-    groupedKpis.push(kpi);
-    kpisByCategoryAndBaseSlug.set(key, groupedKpis);
-  }
+    const subcategory = catalog.subcategories.find((candidate) => candidate.id === kpi.subcategoryId);
+    const signature = kpiSignature(category, subcategory, kpi);
+    const existingKpis = existingKpisBySignature.get(signature);
+    const existingKpi = existingKpis?.shift();
+    if (!existingKpi) continue;
 
-  for (const [key, groupedKpis] of kpisByCategoryAndBaseSlug) {
-    const liveSlugs = liveSlugsByCategoryAndBaseSlug.get(key);
-    if (!liveSlugs || liveSlugs.length < groupedKpis.length) continue;
-
-    groupedKpis.forEach((kpi, index) => {
-      kpi.slug = liveSlugs[index];
-    });
+    kpi.slug = existingKpi.slug;
+    kpi.upvoteCount = existingKpi.upvoteCount ?? 0;
   }
 }
 
-function removeDuplicateKpiPaths(catalog) {
-  const seenPaths = new Set();
-  catalog.kpis = catalog.kpis.filter((kpi) => {
-    const category = catalog.categories.find((candidate) => candidate.id === kpi.categoryId);
-    const path = `${category.slug}/${kpi.slug}`;
+function kpiSignature(category, subcategory, kpi) {
+  return `${category.slug}|${subcategory.slug}|${normalizeName(kpi.name)}`;
+}
 
-    if (seenPaths.has(path)) return false;
+function ensureUniqueKpiSlugs(catalog) {
+  const seenPaths = new Set();
+  catalog.kpis = catalog.kpis.map((kpi) => {
+    const category = catalog.categories.find((candidate) => candidate.id === kpi.categoryId);
+    const subcategory = catalog.subcategories.find((candidate) => candidate.id === kpi.subcategoryId);
+    let slug = kpi.slug;
+    let path = `${category.slug}/${slug}`;
+
+    if (seenPaths.has(path)) {
+      const baseSlug = removeFriendlyIdUuid(slug);
+      const suffix = stableSlugSuffix(category, subcategory, kpi);
+      slug = `${baseSlug}-${suffix}`;
+      path = `${category.slug}/${slug}`;
+    }
 
     seenPaths.add(path);
-    return true;
+    return { ...kpi, slug };
   });
 
   catalog.kpis = catalog.kpis.map((kpi, index) => ({ ...kpi, id: index + 1 }));
-}
-
-async function fetchPageContent(catalog, livePaths) {
-  const categoriesWithKpis = catalog.categories.filter((category) => catalog.kpis.some((kpi) => kpi.categoryId === category.id));
-  const subcategoryPaths = catalog.subcategories
-    .map((subcategory) => {
-      const category = catalog.categories.find((candidate) => candidate.id === subcategory.categoryId);
-      return `${category.slug}/s/${subcategory.slug}`;
-    })
-    .filter((path) => livePaths.has(path));
-
-  const categories = {};
-  const subcategories = {};
-
-  for (const category of categoriesWithKpis) {
-    const html = await fetchLivePageHtml(category.slug);
-    categories[category.slug] = extractStaticMainContent(html, category.slug);
-  }
-
-  for (const path of subcategoryPaths) {
-    const html = await fetchLivePageHtml(path);
-    subcategories[path] = extractStaticMainContent(html, path.split("/")[0]);
-  }
-
-  return {
-    generatedAt: new Date().toISOString(),
-    categories,
-    subcategories,
-  };
-}
-
-async function fetchLivePageHtml(path) {
-  const response = await fetch(`${LIVE_SITE_URL}/${path}`);
-  if (!response.ok) {
-    throw new Error(`Failed to download live page '${path}': ${response.status} ${response.statusText}`);
-  }
-
-  return response.text();
-}
-
-function extractStaticMainContent(html, categorySlug) {
-  const match = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/);
-  if (!match) throw new Error("Live page is missing a <main> element");
-
-  return sanitizePageHtml(match[1], categorySlug);
-}
-
-function sanitizePageHtml(html, categorySlug) {
-  return html
-    .replace(/<meta\b[^>]*>/g, "")
-    .replace(/<turbo-frame[\s\S]*?<\/turbo-frame>/g, "")
-    .replace(/\sdata-[\w-]+(?:="[^"]*")?/g, "")
-    .replace(/\sitemprop="[^"]*"/g, "")
-    .replace(/\sitemscope/g, "")
-    .replace(/\sitemtype="[^"]*"/g, "")
-    .replace(/href="https:\/\/kpiexamples\.operately\.com\//g, 'href="/')
-    .replace(/src="\/assets\/([a-z0-9-]+)-[0-9a-f]{64}\.jpg"/g, (_match, assetSlug) => {
-      const imageSlug = assetSlug.endsWith("-bw") ? assetSlug : categorySlug;
-      return `src="/images/${imageSlug}.jpg"`;
-    })
-    .replace(/class="([^"]*)"/g, (_match, classes) => `class="${mapTailwindClasses(classes)}"`)
-    .replace(/<\/a>\s*<\/a>/g, "</a>")
-    .trim();
-}
-
-function mapTailwindClasses(classes) {
-  return classes
-    .split(/\s+/)
-    .filter((className) => !className.includes(":"))
-    .map((className) => CLASS_NAME_MAP[className] ?? className)
-    .join(" ");
-}
-
-async function addLiveOnlyKpis(catalog, livePaths) {
-  const localPaths = new Set(
-    catalog.kpis.map((kpi) => {
-      const category = catalog.categories.find((candidate) => candidate.id === kpi.categoryId);
-      return `${category.slug}/${kpi.slug}`;
-    }),
-  );
-  const missingKpiPaths = [...livePaths].filter((path) => isKpiPath(path) && !localPaths.has(path)).sort();
-
-  for (const path of missingKpiPaths) {
-    const liveKpi = await fetchLiveKpi(path, catalog);
-    catalog.kpis.push({
-      ...liveKpi,
-      id: catalog.kpis.length + 1,
-    });
-  }
-}
-
-async function fetchLiveKpi(path, catalog) {
-  const response = await fetch(`${LIVE_SITE_URL}/${path}`);
-  if (!response.ok) {
-    throw new Error(`Failed to download live KPI page '${path}': ${response.status} ${response.statusText}`);
-  }
-
-  const html = await response.text();
-  const [categorySlug, kpiSlug] = path.split("/");
-  const category = catalog.categories.find((candidate) => candidate.slug === categorySlug);
-  if (!category) throw new Error(`Live KPI '${path}' references unknown category '${categorySlug}'`);
-
-  const subcategoryName = readBreadcrumbName(html, 2);
-  const subcategorySlug = readBreadcrumbSlug(html, 2);
-  const subcategory = findOrAddLiveSubcategory(catalog, category, subcategoryName, subcategorySlug);
-
-  return {
-    categoryId: category.id,
-    subcategoryId: subcategory.id,
-    name: readHtmlText(html, /<h1[^>]*>([\s\S]*?)<\/h1>/, `title for '${path}'`),
-    slug: kpiSlug,
-    unit: readHtmlText(html, /<p class="text-lg text-gray-500">([\s\S]*?)<\/p>/, `unit for '${path}'`).toLowerCase(),
-    description: readFirstSummaryParagraph(html, path),
-    formula: readOptionalHtmlText(html, /<h2[^>]*>\s*Formula\s*<\/h2>\s*<p class="font-mono">([\s\S]*?)<\/p>/),
-    example: readOptionalHtmlText(
-      html,
-      /<h2[^>]*>\s*Example\s*<\/h2>\s*<p>(?:\s*<p class="mb-4">)?([\s\S]*?)(?:<\/p>\s*){1,2}/,
-    ),
-    upvoteCount: readUpvoteCount(html),
-  };
-}
-
-function findOrAddLiveSubcategory(catalog, category, name, slug) {
-  const existingSubcategory = catalog.subcategories.find(
-    (candidate) => candidate.categoryId === category.id && candidate.slug === slug,
-  );
-  if (existingSubcategory) return existingSubcategory;
-
-  const subcategory = {
-    id: catalog.subcategories.length + 1,
-    categoryId: category.id,
-    name,
-    slug,
-  };
-  catalog.subcategories.push(subcategory);
-  return subcategory;
-}
-
-function readBreadcrumbName(html, position) {
-  const breadcrumb = readBreadcrumb(html, position);
-  return readHtmlText(breadcrumb, /<span itemprop="name">([\s\S]*?)<\/span>/, `breadcrumb ${position}`);
-}
-
-function readBreadcrumbSlug(html, position) {
-  const breadcrumb = readBreadcrumb(html, position);
-  const href = readAttribute(breadcrumb, "href");
-  return href.split("/").filter(Boolean).at(-1);
-}
-
-function readBreadcrumb(html, position) {
-  const breadcrumbs = [...html.matchAll(/<li itemprop="itemListElement"[\s\S]*?<\/li>/g)];
-  const breadcrumb = breadcrumbs[position - 1]?.[0];
-  if (!breadcrumb) throw new Error(`Missing breadcrumb ${position}`);
-  return breadcrumb;
-}
-
-function readAttribute(html, attributeName) {
-  const match = html.match(new RegExp(`${attributeName}="([^"]*)"`));
-  if (!match) throw new Error(`Missing '${attributeName}' attribute`);
-  return decodeXml(match[1]);
-}
-
-function readFirstSummaryParagraph(html, path) {
-  const contentStart = html.indexOf('<div class="text-gray-800">');
-  if (contentStart < 0) throw new Error(`Missing content wrapper for '${path}'`);
-
-  return readHtmlText(html.slice(contentStart), /<p class="mb-4">([\s\S]*?)<\/p>/, `description for '${path}'`);
-}
-
-function readHtmlText(html, pattern, label) {
-  const value = readOptionalHtmlText(html, pattern);
-  if (!value) throw new Error(`Missing ${label}`);
-  return value;
-}
-
-function readOptionalHtmlText(html, pattern) {
-  const match = html.match(pattern);
-  if (!match) return null;
-  return decodeHtml(stripTags(match[1])).trim();
-}
-
-function readUpvoteCount(html) {
-  const match = html.match(/<span class="ml-2">(\d+)<\/span>/);
-  return match ? Number(match[1]) : 0;
-}
-
-function stripTags(value) {
-  return value.replace(/<[^>]+>/g, "");
-}
-
-function isKpiPath(path) {
-  return path.split("/").length === 2 && !path.includes("/s/");
 }
 
 function removeFriendlyIdUuid(slug) {
   return slug.replace(/-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/, "");
 }
 
-function hasFriendlyIdUuid(slug) {
-  return /-[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.test(slug);
+function stableSlugSuffix(category, subcategory, kpi) {
+  return stableHash(`${category.slug}|${subcategory.slug}|${kpi.name}|${kpi.description}`).slice(0, 8);
+}
+
+function stableHash(value) {
+  let hash = 0x811c9dc5;
+  for (let index = 0; index < value.length; index += 1) {
+    hash ^= value.charCodeAt(index);
+    hash = Math.imul(hash, 0x01000193);
+  }
+  return (hash >>> 0).toString(16).padStart(8, "0");
 }
 
 function findOrCreateCategory(categoryByName, categorySummaries, categoryName) {
@@ -581,10 +422,4 @@ function decodeXml(value) {
     .replace(/&lt;/g, "<")
     .replace(/&gt;/g, ">")
     .replace(/&amp;/g, "&");
-}
-
-function decodeHtml(value) {
-  return decodeXml(value)
-    .replace(/&#(\d+);/g, (_match, codepoint) => String.fromCodePoint(Number(codepoint)))
-    .replace(/&#x([0-9a-f]+);/gi, (_match, codepoint) => String.fromCodePoint(Number.parseInt(codepoint, 16)));
 }
