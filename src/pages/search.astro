@@ -1,18 +1,22 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { categories, kpis } from "../lib/catalog";
+import { getCategoryForKpi, getSubcategoryForKpi, kpis } from "../lib/catalog";
 
 const searchIndex = kpis.map((kpi) => {
-  const category = categories.find((candidate) => candidate.id === kpi.categoryId);
+  const category = getCategoryForKpi(kpi);
+  const subcategory = getSubcategoryForKpi(kpi);
 
   return {
     name: kpi.name,
     description: kpi.description,
+    formula: kpi.formula,
     example: kpi.example,
     unit: kpi.unit,
-    href: category ? `/${category.slug}/${kpi.slug}` : "#",
-    categoryName: category?.name ?? "",
-    categoryHref: category ? `/${category.slug}` : "#",
+    href: `/${category.slug}/${kpi.slug}`,
+    categoryName: category.name,
+    categoryHref: `/${category.slug}`,
+    subcategoryName: subcategory.name,
+    subcategoryHref: `/${category.slug}/s/${subcategory.slug}`,
   };
 });
 ---
@@ -22,7 +26,13 @@ const searchIndex = kpis.map((kpi) => {
   <form class="search-page-form" action="/search" method="get">
     <label for="query">Search term</label>
     <div>
-      <input id="query" name="query" type="search" autofocus />
+      <input
+        id="query"
+        name="query"
+        type="search"
+        placeholder="Search KPIs by name or description"
+        autofocus
+      />
       <button type="submit">Search</button>
     </div>
   </form>
@@ -30,37 +40,96 @@ const searchIndex = kpis.map((kpi) => {
 </BaseLayout>
 
 <script define:vars={{ searchIndex }}>
-  const params = new URLSearchParams(window.location.search);
-  const query = params.get("query")?.trim() ?? "";
+  const form = document.querySelector(".search-page-form");
   const input = document.querySelector("#query");
   const title = document.querySelector("#search-title");
   const results = document.querySelector("#search-results");
 
-  input.value = query;
+  input.value = readQuery();
 
   function firstSentence(value) {
+    if (!value) {
+      return "";
+    }
+
     const index = value.indexOf(".");
     return index >= 0 ? value.slice(0, index + 1) : value;
   }
 
-  function matches(item, normalizedQuery) {
-    const haystack = [item.name, item.description, item.example, item.categoryName].filter(Boolean).join(" ").toLowerCase();
-    return haystack.includes(normalizedQuery);
+  function normalize(value) {
+    return value
+      .toLowerCase()
+      .normalize("NFKD")
+      .replace(/[\u0300-\u036f]/g, "");
   }
 
-  function render() {
-    if (!query) {
-      title.textContent = "Search KPI Examples";
-      results.innerHTML = "<p>Enter a term above to search the static KPI catalog.</p>";
+  function searchTerms(query) {
+    return normalize(query).split(/\s+/).filter(Boolean);
+  }
+
+  function matches(item, terms) {
+    const haystack = normalize(
+      [
+        item.name,
+        item.description,
+        item.formula,
+        item.example,
+        item.unit,
+        item.categoryName,
+        item.subcategoryName,
+      ]
+        .filter(Boolean)
+        .join(" "),
+    );
+
+    return terms.every((term) => haystack.includes(term));
+  }
+
+  function readQuery() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("query")?.trim() ?? "";
+  }
+
+  function writeQuery(query, method = "replaceState") {
+    const url = new URL(window.location.href);
+
+    if (query) {
+      url.searchParams.set("query", query);
+    } else {
+      url.searchParams.delete("query");
+    }
+
+    if (method === "pushState") {
+      window.history.pushState(null, "", url);
       return;
     }
 
-    const normalizedQuery = query.toLowerCase();
-    const matchesForQuery = searchIndex.filter((item) => matches(item, normalizedQuery));
-    title.textContent = `${matchesForQuery.length} search results for '${query}'`;
+    window.history.replaceState(null, "", url);
+  }
+
+  function render() {
+    const query = input.value.trim();
+
+    if (!query) {
+      title.textContent = "Search KPI Examples";
+      results.textContent = "";
+      const empty = document.createElement("p");
+      empty.textContent = "Enter a term above to search the static KPI catalog.";
+      results.append(empty);
+      return;
+    }
+
+    const terms = searchTerms(query);
+    const matchesForQuery = searchIndex.filter((item) => matches(item, terms));
+    title.textContent = `${matchesForQuery.length} ${
+      matchesForQuery.length === 1 ? "search result" : "search results"
+    } for "${query}"`;
 
     if (matchesForQuery.length === 0) {
-      results.innerHTML = "<p>No KPI examples matched this search.</p>";
+      results.textContent = "";
+      const empty = document.createElement("p");
+      empty.textContent = "No KPI examples matched this search.";
+      results.append(empty);
       return;
     }
 
@@ -76,7 +145,11 @@ const searchIndex = kpis.map((kpi) => {
     const categoryLink = document.createElement("a");
     categoryLink.href = item.categoryHref;
     categoryLink.textContent = item.categoryName;
-    category.append(categoryLink);
+    const separator = document.createTextNode(" / ");
+    const subcategoryLink = document.createElement("a");
+    subcategoryLink.href = item.subcategoryHref;
+    subcategoryLink.textContent = item.subcategoryName;
+    category.append(categoryLink, separator, subcategoryLink);
 
     const heading = document.createElement("h2");
     heading.className = "search-result-title";
@@ -92,6 +165,22 @@ const searchIndex = kpis.map((kpi) => {
     article.append(category, heading, description);
     return article;
   }
+
+  input.addEventListener("input", () => {
+    writeQuery(input.value.trim());
+    render();
+  });
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    writeQuery(input.value.trim(), "pushState");
+    render();
+  });
+
+  window.addEventListener("popstate", () => {
+    input.value = readQuery();
+    render();
+  });
 
   render();
 </script>
