@@ -46,7 +46,7 @@ function buildSitemapEntries(): SitemapEntry[] {
 
 function renderEntry(entry: SitemapEntry) {
   return `  <url>
-    <loc>${SITE_URL}/${entry.path}</loc>
+    <loc>${SITE_URL}/${entry.path}/</loc>
     <priority>${entry.priority}</priority>
   </url>`;
 }
